@@ -3,8 +3,12 @@ import { Link } from 'react-router';
 
 export default class App extends React.Component {
   render() {
-    return <Nav />;
-    {this.props.children}
+    return (
+      <div>
+        <Nav />
+        {this.props.children}
+      </div>
+    );
   }
 }
 
