@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Cookie);
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
+
+@navy: #022550;
+@light-grey: #f2f2f2;
+@gold: #DDC087;
+
+body {
+  background: @navy;
+  color: @light-grey;
+  margin: 0;
+  padding: 0;
+}
+
+.fancy-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 72px;
+  font-weight: 100;
+  margin: 20px;
+  text-align: center;
+}
+
+.no-link-formatting {
+  color: @light-grey;
+  text-decoration: none;
+}
+
+.nav {
+  margin: 0 auto;
+  display: table;
+  list-style: none;
+  font-family: 'Josefin Slab', serif;
+  text-transform: uppercase;
+
+  ul {
+    min-width: 80%;
+    list-style: none;
+    font-size: 18px;
+    li {
+      display: inline;
+      padding: 10px;
+      a:hover {
+        color: @gold;
+      }
+    }
+  }
+}
