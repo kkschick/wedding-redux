@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Cookie);
 @import url(https://fonts.googleapis.com/css?family=Great+Vibes);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab);
+@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
 
@@ -28,6 +29,14 @@ body {
   text-decoration: none;
 }
 
+.header-large {
+  font-family: 'Old Standard TT', serif;
+  text-transform: uppercase;
+  font-size: 36px;
+  text-align: center;
+  margin: 0;
+}
+
 .nav {
   margin: 0 auto;
   display: table;
@@ -39,6 +48,10 @@ body {
     min-width: 80%;
     list-style: none;
     font-size: 18px;
+    padding: 8px 0;
+    border-top: 2px solid @light-grey;
+    border-bottom: 2px solid @light-grey;
+
     li {
       display: inline;
       padding: 10px;
