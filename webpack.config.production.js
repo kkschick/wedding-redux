@@ -1,7 +1,7 @@
 /* eslint-disable no-var */
-var webpack = require('webpack');
-var path = require('path');
 var less = require('less');
+var path = require('path');
+var webpack = require('webpack');
 
 require('./public/css/styles.less');
 

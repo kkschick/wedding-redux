@@ -5,7 +5,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav />
+        <Nav active={this.props.location.pathname} />
         {this.props.children}
       </div>
     );
@@ -13,18 +13,34 @@ export default class App extends React.Component {
 }
 
 class Nav extends React.Component {
+
+  getActiveItem(navItems) {
+    let activeRoute = this.props.active;
+    let activeNavItem = navItems.find(item => { return item.route === activeRoute; });
+    activeNavItem.classNames = activeNavItem.classNames + ' active';
+    return navItems;
+  }
+
   render() {
+    let navItems = [
+      { name: 'Details', route: '/details', classNames: 'no-link-formatting'},
+      { name: 'Accommodations', route: '/accommodations', classNames: 'no-link-formatting'},
+      { name: 'Photos', route: '/photos', classNames: 'no-link-formatting'},
+      { name: 'Registry', route: '/registry', classNames: 'no-link-formatting'},
+      { name: 'RSVP', route: '/rsvp', classNames: 'no-link-formatting'},
+      { name: 'Admin', route: '/admin', classNames: 'no-link-formatting'}
+    ];
+
+    navItems = this.getActiveItem(navItems);
+
     return (
       <div>
-        <h1 className="fancy-text"><Link to="/" className="no-link-formatting ">Katie + Walter</Link></h1>
+        <h1 className="fancy-text"><Link to="/" className="no-link-formatting">Katie + Walter</Link></h1>
         <div className="nav">
           <ul>
-            <li><Link to="/details" className="no-link-formatting ">Details</Link></li>
-            <li><Link to="/accommodations" className="no-link-formatting  ">Accommodations</Link></li>
-            <li><Link to="/photos" className="no-link-formatting  ">Photos</Link></li>
-            <li><Link to="/registry" className="no-link-formatting  ">Registry</Link></li>
-            <li><Link to="/rsvp" className="no-link-formatting  ">RSVP</Link></li>
-            <li><Link to="/admin" className="no-link-formatting ">Admin</Link></li>
+            { navItems.map((item, idx) =>
+              <li key={idx}><Link to={item.route} className={item.classNames}>{item.name}</Link></li>)
+            }
           </ul>
         </div>
       </div>
