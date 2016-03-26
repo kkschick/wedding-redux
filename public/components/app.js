@@ -7,16 +7,18 @@ export default class App extends React.Component {
       <div>
         <Nav active={this.props.location.pathname} />
         {this.props.children}
+        <Countdown />
       </div>
     );
   }
 }
 
 class Nav extends React.Component {
-
   getActiveItem(navItems) {
     let activeRoute = this.props.active;
-    if (activeRoute === '/') { return navItems; }
+    if (activeRoute === '/') {
+      return navItems;
+    }
     let activeNavItem = navItems.find(item => { return item.route === activeRoute; });
     activeNavItem.classNames = activeNavItem.classNames + ' active';
     return navItems;
@@ -46,5 +48,19 @@ class Nav extends React.Component {
         </div>
       </div>
     );
+  }
+}
+
+class Countdown extends React.Component {
+  calculateDaysLeft() {
+    let today = new Date();
+    let weddingDate = new Date("April 29, 2017");
+    let distance = weddingDate - today;
+    return Math.ceil(distance / 86400000);
+  }
+
+  render() {
+    let daysLeft = this.calculateDaysLeft();
+    return <div className="header-large">{daysLeft} days to go!</div>;
   }
 }
