@@ -16,6 +16,7 @@ class Nav extends React.Component {
 
   getActiveItem(navItems) {
     let activeRoute = this.props.active;
+    if (activeRoute === '/') { return navItems; }
     let activeNavItem = navItems.find(item => { return item.route === activeRoute; });
     activeNavItem.classNames = activeNavItem.classNames + ' active';
     return navItems;
