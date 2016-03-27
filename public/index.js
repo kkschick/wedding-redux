@@ -1,20 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { browserHistory, IndexRoute, Route, Router } from 'react-router';
 
-import Accommodations from './components/accommodations';
-import Admin from './components/admin';
-import App from './components/app';
-import Details from './components/details';
-import Photos from './components/photos';
-import Registry from './components/registry';
-import RSVP from './components/rsvp';
+import Accommodations from './components/Accommodations';
+import Admin from './components/Admin';
+import App from './components/App';
+import Details from './components/Details';
+import Index from './components/Index';
+import Photos from './components/Photos';
+import Registry from './components/Registry';
+import RSVP from './components/RSVP';
 
 require('./css/styles.less');
 
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
+      <IndexRoute component={Index}/>
       <Route path="details" component={Details}/>
       <Route path="accommodations" component={Accommodations}/>
       <Route path="photos" component={Photos}/>

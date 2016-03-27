@@ -1,66 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import Footer from './Footer';
+import NavBar from './NavBar';
+
 export default class App extends React.Component {
   render() {
     return (
-      <div>
-        <Nav active={this.props.location.pathname} />
-        {this.props.children}
-        <Countdown />
-      </div>
-    );
-  }
-}
-
-class Nav extends React.Component {
-  getActiveItem(navItems) {
-    let activeRoute = this.props.active;
-    if (activeRoute === '/') {
-      return navItems;
-    }
-    let activeNavItem = navItems.find(item => { return item.route === activeRoute; });
-    activeNavItem.classNames = activeNavItem.classNames + ' active';
-    return navItems;
-  }
-
-  render() {
-    let navItems = [
-      { name: 'Details', route: '/details', classNames: 'no-link-formatting'},
-      { name: 'Accommodations', route: '/accommodations', classNames: 'no-link-formatting'},
-      { name: 'Photos', route: '/photos', classNames: 'no-link-formatting'},
-      { name: 'Registry', route: '/registry', classNames: 'no-link-formatting'},
-      { name: 'RSVP', route: '/rsvp', classNames: 'no-link-formatting'},
-      { name: 'Admin', route: '/admin', classNames: 'no-link-formatting'}
-    ];
-
-    navItems = this.getActiveItem(navItems);
-
-    return (
-      <div>
-        <h1 className="fancy-text"><Link to="/" className="no-link-formatting">Katie + Walter</Link></h1>
-        <div className="nav">
-          <ul>
-            { navItems.map((item, idx) =>
-              <li key={idx}><Link to={item.route} className={item.classNames}>{item.name}</Link></li>)
-            }
-          </ul>
+      <div className="app-wrapper">
+        <div className="app-body">
+          <NavBar active={this.props.location.pathname} />
+          {this.props.children}
         </div>
+        <Footer />
       </div>
     );
-  }
-}
-
-class Countdown extends React.Component {
-  calculateDaysLeft() {
-    let today = new Date();
-    let weddingDate = new Date("April 29, 2017");
-    let distance = weddingDate - today;
-    return Math.ceil(distance / 86400000);
-  }
-
-  render() {
-    let daysLeft = this.calculateDaysLeft();
-    return <div className="header-large">{daysLeft} days to go!</div>;
   }
 }

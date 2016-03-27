@@ -16,25 +16,14 @@ body {
   padding: 0;
 }
 
-.fancy-text {
-  font-family: 'Great Vibes', cursive;
-  font-size: 72px;
-  font-weight: 100;
-  margin: 20px;
-  text-align: center;
-}
+.app-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 
-.no-link-formatting {
-  color: @light-grey;
-  text-decoration: none;
-}
-
-.header-large {
-  font-family: 'Old Standard TT', serif;
-  text-transform: uppercase;
-  font-size: 36px;
-  text-align: center;
-  margin: 0;
+  .app-body {
+    flex: 1;
+  }
 }
 
 .nav {
@@ -63,4 +52,48 @@ body {
       }
     }
   }
+}
+
+.body-container {
+  min-width: 80%;
+  img {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    width: 500px;
+    border: 2px solid @light-grey;
+  }
+}
+
+.fancy-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 58px;
+  font-weight: 100;
+  margin: 15px;
+  text-align: center;
+}
+
+.no-link-formatting {
+  color: @light-grey;
+  text-decoration: none;
+}
+
+.header-large {
+  font-family: 'Old Standard TT', serif;
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+}
+
+.paragraph-text {
+  font-family: 'Old Standard TT', serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+.footer {
+  border-top: 2px solid @light-grey;
+  font-family: 'Old Standard TT', serif;
+  text-align: center;
 }
