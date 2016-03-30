@@ -2,10 +2,14 @@
 
 ## Getting Started
 
-### Setup back-end
+### Clone repo
 ```
 $ git clone git@github.com:kkschick/wedding-app.git
 $ cd wedding-app/
+```
+
+### Setup back-end
+```
 $ virtualenv venv
 $ . venv/bin/activate
 $ pip install -r requirements.txt
