@@ -5,11 +5,12 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
 
-@navy: #022550;
-@light-grey: #f2f2f2;
+@navy: #1B192E;
+@light-grey: #DAD9D7;
 @gold: #DDC087;
 
 body {
+  background: @navy;
   color: @light-grey;
   margin: 0;
   padding: 0;
@@ -19,13 +20,9 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background: @light-grey;
 
   .app-body {
     flex: 1;
-    width: 98%;
-    margin: 0 auto;
-    background: @navy;
   }
 }
 
@@ -51,7 +48,7 @@ body {
         color: @gold;
       }
       a:hover {
-        color: @gold;
+        color: lighten(@gold, 8%);
       }
     }
   }

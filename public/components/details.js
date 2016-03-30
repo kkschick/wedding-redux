@@ -19,7 +19,7 @@ export default class Details extends React.Component {
         <div className="paragraph-text">
           7pm — Ceremony<br/>
           7:30pm — Cocktail Hour<br/>
-          8:30pm-12:30am — Reception<br/><br/>
+          8:30pm-12:30am — Dinner & Dancing!<br/><br/>
           Cocktail Attire / Black Tie Optional
         </div><br/>
       </div>
