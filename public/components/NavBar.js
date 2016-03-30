@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 export default class NavBar extends React.Component {
   getActiveItem(navItems) {
     let activeRoute = this.props.active;
-    if (activeRoute === '/') {
+    if (activeRoute === '/' || activeRoute === '/admin') {
       return navItems;
     }
     let activeNavItem = navItems.find(item => { return item.route === activeRoute; });
@@ -14,12 +14,12 @@ export default class NavBar extends React.Component {
 
   render() {
     let navItems = [
-      { name: 'Details', route: '/details', classNames: 'no-link-formatting'},
+      { name: 'The Wedding', route: '/details', classNames: 'no-link-formatting'},
+      { name: 'Directions', route: '/directions', classNames: 'no-link-formatting'},
       { name: 'Accommodations', route: '/accommodations', classNames: 'no-link-formatting'},
       { name: 'Photos', route: '/photos', classNames: 'no-link-formatting'},
       { name: 'Registry', route: '/registry', classNames: 'no-link-formatting'},
-      { name: 'RSVP', route: '/rsvp', classNames: 'no-link-formatting'},
-      { name: 'Admin', route: '/admin', classNames: 'no-link-formatting'}
+      { name: 'RSVP', route: '/rsvp', classNames: 'no-link-formatting'}
     ];
 
     navItems = this.getActiveItem(navItems);
