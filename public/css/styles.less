@@ -70,7 +70,29 @@ body {
   max-width: 20%;
   min-height: 300px;
   margin: 0 auto;
-  border: 2px solid @light-grey;
+  margin-top: 50px;
+  position: relative;
+  border: 3px solid @light-grey;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -11px;
+    left: -11px;
+    right: -11px;
+    bottom: -11px;
+    background: @light-grey;
+    z-index: -1;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: @navy;
+    z-index: -1;
+  }
   .form-inner {
     margin: 20px;
     .form-element {
@@ -138,6 +160,7 @@ button {
 }
 
 .footer {
+  background: @light-grey;
   color: @navy;
   font-size: 24px;
   font-weight: 500;
