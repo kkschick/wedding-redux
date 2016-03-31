@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 export default class NavBar extends React.Component {
   getActiveItem(navItems) {
     let activeRoute = this.props.active;
-    if (activeRoute === '/' || activeRoute === '/admin') {
+    if (activeRoute === '/' || activeRoute === '/admin' || activeRoute === '/login') {
       return navItems;
     }
     let activeNavItem = navItems.find(item => { return item.route === activeRoute; });

@@ -8,6 +8,7 @@
 @navy: #1B192E;
 @light-grey: #DAD9D7;
 @gold: #DDC087;
+@coral: #F1595C;
 
 body {
   background: @navy;
@@ -65,6 +66,42 @@ body {
   }
 }
 
+.form-container {
+  max-width: 20%;
+  min-height: 300px;
+  margin: 0 auto;
+  border: 2px solid @light-grey;
+  .form-inner {
+    margin: 20px;
+    .form-element {
+      padding: 10px;
+    }
+    form {
+      text-align: center;
+      input {
+        font-family: 'Old Standard TT', serif;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+button {
+  font-family: 'Old Standard TT', serif;
+  text-transform: uppercase;
+  padding: 10px;
+  margin: 10px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background: @light-grey;
+  color: @navy;
+  border-style: none;
+  &:hover {
+    background: lighten(@light-grey, 10%);
+  }
+}
+
 .fancy-text {
   font-family: 'Great Vibes', cursive;
   font-size: 58px;
@@ -90,6 +127,14 @@ body {
   font-family: 'Old Standard TT', serif;
   font-size: 18px;
   text-align: center;
+}
+
+.small-text {
+  font-size: 14px;
+}
+
+.pink-text {
+  color: @coral;
 }
 
 .footer {

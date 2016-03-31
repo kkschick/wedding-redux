@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory, IndexRoute, Route, Router } from 'react-router';
+import auth from './auth'
 
 import Accommodations from './components/Accommodations';
 import Admin from './components/Admin';
@@ -8,23 +9,39 @@ import App from './components/App';
 import Details from './components/Details';
 import Directions from './components/Directions';
 import Index from './components/Index';
+import Login from './components/Login';
 import Photos from './components/Photos';
 import Registry from './components/Registry';
 import RSVP from './components/RSVP';
 
 require('./css/styles.less');
 
+function requireAuth(nextState, replace) {
+  if (!auth.loggedIn()) {
+    replace({
+      pathname: '/login',
+      state: { nextPathname: nextState.location.pathname }
+    })
+  }
+}
+
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Index}/>
-      <Route path="details" component={Details}/>
-      <Route path="directions" component={Directions}/>
-      <Route path="accommodations" component={Accommodations}/>
-      <Route path="photos" component={Photos}/>
-      <Route path="registry" component={Registry}/>
-      <Route path="rsvp" component={RSVP}/>
-      <Route path="admin" component={Admin}/>
+      <IndexRoute component={Index} onEnter={requireAuth}/>
+      <Route path="login" component={Login}/>
+      <Route path="details" component={Details} onEnter={requireAuth}/>
+      <Route path="directions" component={Directions} onEnter={requireAuth}/>
+      <Route path="accommodations" component={Accommodations} onEnter={requireAuth}/>
+      <Route path="photos" component={Photos} onEnter={requireAuth}/>
+      <Route path="registry" component={Registry} onEnter={requireAuth}/>
+      <Route path="rsvp" component={RSVP} onEnter={requireAuth}/>
+      <Route path="admin" component={Admin} onEnter={requireAuth}/>
     </Route>
   </Router>
 ), document.getElementById('app'));
+
+window.onbeforeunload = function() {
+  localStorage.removeItem('token');
+  return '';
+};
