@@ -10,7 +10,13 @@ export default class Index extends React.Component {
         <br/>
         <img src="./public/img/montana.jpg" /><br/>
         <div className="paragraph-text">
-          We are so excited to celebrate our wedding with you!
+          <span className="large-text">
+            We are so excited to celebrate our wedding with you!<br/>
+          </span>
+          <span className="small-text">
+            If you have questions about anything,<br/>
+            write to us at <strong>katiepluswalter(at)gmail(dot)com!</strong>
+          </span>
         </div>
       </div>
     );

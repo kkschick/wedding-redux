@@ -17,10 +17,10 @@ export default class Details extends React.Component {
         </div><br/>
         <h1 className="header-large">The Schedule</h1>
         <div className="paragraph-text">
-          7pm — Ceremony<br/>
-          7:30pm — Cocktail Hour<br/>
-          8:30pm-12:30am — Dinner & Dancing!<br/><br/>
-          Cocktail Attire / Black Tie Optional
+          7pm — Ceremony &nbsp; <i className="fa fa-heart"></i><br/>
+          7:30pm — Cocktail Hour &nbsp; <i className="fa fa-glass"></i><br/>
+          8:30pm-12:30am — Dinner & Dancing! &nbsp; <i className="fa fa-thumbs-up"></i><br/><br/>
+          Cocktail Attire / Black Tie Optional &nbsp; <i className="fa fa-black-tie"></i>
         </div><br/>
       </div>
     );

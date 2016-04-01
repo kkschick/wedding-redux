@@ -10,6 +10,12 @@ export default class Countdown extends React.Component {
 
   render() {
     let daysLeft = this.calculateDaysLeft();
-    return <div>{daysLeft} days to go!</div>;
+    return (
+      <div>
+        <i className="fa fa-hourglass-half"></i>
+          &nbsp;&nbsp;{daysLeft} days to go!&nbsp;&nbsp;
+        <i className="fa fa-hourglass-half"></i>
+      </div>
+    );
   }
 }

@@ -5,9 +5,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
 
-@navy: #1B192E;
+@navy: #0E1D31;
 @light-grey: #DAD9D7;
-@gold: #DDC087;
+@gold: #C1925F;
 @coral: #F1595C;
 
 body {
@@ -47,6 +47,7 @@ body {
       padding: 10px;
       .active {
         color: @gold;
+        font-weight: 800;
       }
       a:hover {
         color: lighten(@gold, 8%);
@@ -67,7 +68,7 @@ body {
 }
 
 .form-container {
-  max-width: 20%;
+  width: 400px;
   min-height: 300px;
   margin: 0 auto;
   margin-top: 50px;
@@ -149,6 +150,10 @@ button {
   font-family: 'Old Standard TT', serif;
   font-size: 18px;
   text-align: center;
+}
+
+.large-text {
+  font-size: 24px;
 }
 
 .small-text {
