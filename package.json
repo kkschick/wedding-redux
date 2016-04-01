@@ -1,7 +1,7 @@
 {
   "name": "wedding-app",
-  "version": "4.0.0",
-  "description": "Boilerplate for kick starting a React Project with ES6 (Babel) and Hot reloader using Webpack.",
+  "version": "1.0.0",
+  "description": "An app to manage my wedding using Flask, React, Redux, Webpack, Babel, and LESS.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
