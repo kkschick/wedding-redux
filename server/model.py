@@ -1,57 +1,42 @@
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine
-from sqlalchemy import Column, Integer, String, Date, Text, Boolean, Enum
-from sqlalchemy.orm import sessionmaker, scoped_session
-from sqlalchemy import ForeignKey
-from sqlalchemy.orm import relationship, backref
-import config
+from app import db
 
-engine = create_engine(config.DB_URI, echo=False)
-session = scoped_session(sessionmaker(bind=engine, autocommit=False, autoflush=False))
-
-Base = declarative_base()
-Base.query = session.query_property()
-
-
-class Party(Base):
+class Party(db.Model):
     __tablename__ = "parties"
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(128))
-    street_address = Column(String(128), nullable=True)
-    city = Column(String(128), nullable=True)
-    state = Column(String(64), nullable=True)
-    zip_code = Column(String(64), nullable=True)
-    country = Column(String(64), nullable=True)
-    notify_early = Column(Boolean, nullable=True)
-    std_sent = Column(Date, nullable=True)
-    invitation_sent = Column(Date, nullable=True)
-    gift_received = Column(Date, nullable=True)
-    gift = Column(Text, nullable=True)
-    thank_you_sent = Column(Date, nullable=True)
+    id = db.Column(db.Integer, primary_key=True, index=True)
+    name = db.Column(db.String(128))
+    street_address = db.Column(db.String(128), nullable=True)
+    city = db.Column(db.String(128), nullable=True)
+    state = db.Column(db.String(64), nullable=True)
+    zip_code = db.Column(db.String(64), nullable=True)
+    country = db.Column(db.String(64), nullable=True)
+    notify_early = db.Column(db.Boolean, nullable=True)
+    std_sent = db.Column(db.Date, nullable=True)
+    invitation_sent = db.Column(db.Date, nullable=True)
+    gift_received = db.Column(db.Date, nullable=True)
+    gift = db.Column(db.Text, nullable=True)
+    thank_you_sent = db.Column(db.Date, nullable=True)
+    guests = db.relationship('Guest', backref='parties')
 
-class Guest(Base):
+class Guest(db.Model):
     __tablename__ = "guests"
 
-    id = Column(Integer, primary_key=True, index=True)
-    first_name = Column(String(64))
-    last_name = Column(String(64))
-    email = Column(String(128), nullable=True)
-    age = Column(Enum('ADULT', 'KID', name='age'))
-    tier = Column(Enum('A', 'B', 'C', name='tier'))
-    category = Column(String(128))
-    side = Column(Enum('Bride', 'Groom', 'Both', name='side'))
-    dietary_pref = Column(String(64))
-    rsvp_received = Column(Date, nullable=True)
-    is_coming = Column(Boolean, nullable=True)
-    comments = Column(Text, nullable=True)
-    party = relationship("Party", backref=backref("guests", order_by=id))
+    id = db.Column(db.Integer, primary_key=True, index=True)
+    party_id = db.Column(db.Integer, db.ForeignKey('parties.id'))
+    first_name = db.Column(db.String(64))
+    last_name = db.Column(db.String(64))
+    email = db.Column(db.String(128), nullable=True)
+    age = db.Column(db.Enum('ADULT', 'KID', name='age'))
+    tier = db.Column(db.Enum('A', 'B', 'C', name='tier'))
+    category = db.Column(db.String(128))
+    side = db.Column(db.Enum('Bride', 'Groom', 'Both', name='side'))
+    dietary_pref = db.Column(db.String(64))
+    rsvp_received = db.Column(db.Date, nullable=True)
+    is_coming = db.Column(db.Boolean, nullable=True)
+    comments = db.Column(db.Text, nullable=True)
 
-def create_tables():
-    Base.metadata.create_all(engine)
+    @classmethod
+    def get_guest_by_id(self, guest_id):
+        """ Get event object by its id. """
 
-def main():
-    create_tables()
-
-if __name__ == "__main__":
-    main()
+        return self.query.filter_by(id=guest_id).first()

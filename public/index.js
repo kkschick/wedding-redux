@@ -1,45 +1,38 @@
+import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory, IndexRoute, Route, Router } from 'react-router';
-import auth from './auth'
+import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import thunk from 'redux-thunk';
 
-import Accommodations from './components/Accommodations';
-import Admin from './components/Admin';
-import App from './components/App';
-import Details from './components/Details';
-import Directions from './components/Directions';
-import Index from './components/Index';
-import Login from './components/Login';
-import Photos from './components/Photos';
-import Registry from './components/Registry';
-import RSVP from './components/RSVP';
+import routes from './routes';
+import rsvpReducer from './reducers/rsvpReducer';
 
 require('./css/styles.less');
 
-function requireAuth(nextState, replace) {
-  if (!auth.loggedIn()) {
-    replace({
-      pathname: '/login',
-      state: { nextPathname: nextState.location.pathname }
-    })
-  }
-}
+let createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
-ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Index} onEnter={requireAuth}/>
-      <Route path="login" component={Login}/>
-      <Route path="details" component={Details} onEnter={requireAuth}/>
-      <Route path="directions" component={Directions} onEnter={requireAuth}/>
-      <Route path="accommodations" component={Accommodations} onEnter={requireAuth}/>
-      <Route path="photos" component={Photos} onEnter={requireAuth}/>
-      <Route path="registry" component={Registry} onEnter={requireAuth}/>
-      <Route path="rsvp" component={RSVP} onEnter={requireAuth}/>
-      <Route path="admin" component={Admin} onEnter={requireAuth}/>
-    </Route>
-  </Router>
-), document.getElementById('app'));
+const RootReducer = combineReducers({
+  rsvpReducer: rsvpReducer
+});
+
+const store = createStoreWithMiddleware(RootReducer, window.__INITIAL_STATE__);
+
+
+ReactDOM.render(
+  <div>
+    <Provider store={ store }>
+      <div>
+        <Router
+          routes={ routes }
+          history={ browserHistory }
+        />
+      </div>
+    </Provider>
+  </div>,
+  document.getElementById('app')
+);
 
 window.onbeforeunload = function() {
   localStorage.removeItem('token');

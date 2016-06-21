@@ -1,0 +1,66 @@
+CREATE TABLE parties (
+    id integer NOT NULL,
+    name character varying,
+    street_address character varying,
+    city character varying,
+    state character varying,
+    zip_code character varying,
+    country character varying,
+    notify_early boolean,
+    std_sent timestamp,
+    invitation_sent timestamp,
+    gift_received timestamp,
+    gift character varying,
+    thank_you_sent timestamp
+);
+
+CREATE SEQUENCE parties_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE parties_id_seq OWNED BY parties.id;
+
+CREATE TYPE ages AS ENUM ('ADULT', 'KID');
+CREATE TYPE tiers AS ENUM ('A', 'B', 'C');
+CREATE TYPE sides AS ENUM ('Bride', 'Groom', 'Both');
+
+CREATE TABLE guests (
+    id integer NOT NULL,
+    party_id integer,
+    first_name character varying,
+    last_name character varying,
+    email character varying,
+    age ages,
+    tier tiers,
+    category character varying,
+    side sides,
+    dietary_pref character varying,
+    rsvp_received timestamp,
+    is_coming boolean,
+    comments character varying
+);
+
+CREATE SEQUENCE guests_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE guests_id_seq OWNED BY guests.id;
+
+ALTER TABLE ONLY parties ALTER COLUMN id SET DEFAULT nextval('parties_id_seq'::regclass);
+
+ALTER TABLE ONLY guests ALTER COLUMN id SET DEFAULT nextval('guests_id_seq'::regclass);
+
+ALTER TABLE ONLY parties
+    ADD CONSTRAINT parties_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY guests
+    ADD CONSTRAINT guests_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY guests
+    ADD CONSTRAINT guests_party_id_fkey FOREIGN KEY (party_id) REFERENCES parties(id);
