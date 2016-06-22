@@ -11,7 +11,9 @@ CREATE TABLE parties (
     invitation_sent timestamp,
     gift_received timestamp,
     gift character varying,
-    thank_you_sent timestamp
+    thank_you_sent timestamp,
+    needs_parking boolean,
+    num_parking_spots integer
 );
 
 CREATE SEQUENCE parties_id_seq
@@ -37,7 +39,8 @@ CREATE TABLE guests (
     tier tiers,
     category character varying,
     side sides,
-    dietary_pref character varying,
+    food_pref character varying,
+    dietary_restrictions character varying,
     rsvp_received timestamp,
     is_coming boolean,
     comments character varying

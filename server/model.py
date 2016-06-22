@@ -16,7 +16,16 @@ class Party(db.Model):
     gift_received = db.Column(db.Date, nullable=True)
     gift = db.Column(db.Text, nullable=True)
     thank_you_sent = db.Column(db.Date, nullable=True)
+    needs_parking = db.Column(db.Boolean, nullable=True)
+    num_parking_spots = db.Column(db.Integer)
     guests = db.relationship('Guest', backref='parties')
+
+    @classmethod
+    def get_party_by_id(self, party_id):
+        """ Get party object by its id. """
+
+        return self.query.filter_by(id=party_id).first()
+
 
 class Guest(db.Model):
     __tablename__ = "guests"
@@ -30,13 +39,20 @@ class Guest(db.Model):
     tier = db.Column(db.Enum('A', 'B', 'C', name='tier'))
     category = db.Column(db.String(128))
     side = db.Column(db.Enum('Bride', 'Groom', 'Both', name='side'))
-    dietary_pref = db.Column(db.String(64))
+    food_pref = db.Column(db.String(64))
+    dietary_restrictions = db.Column(db.String(64))
     rsvp_received = db.Column(db.Date, nullable=True)
     is_coming = db.Column(db.Boolean, nullable=True)
     comments = db.Column(db.Text, nullable=True)
 
     @classmethod
     def get_guest_by_id(self, guest_id):
-        """ Get event object by its id. """
+        """ Get guest object by its id. """
 
         return self.query.filter_by(id=guest_id).first()
+
+    @classmethod
+    def get_guests_by_last_name(self, last_name):
+        """ Get all guests with specified last name. """
+
+        return self.query.filter_by(last_name=last_name).all()

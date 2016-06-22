@@ -34,7 +34,7 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-window.onbeforeunload = function() {
-  localStorage.removeItem('token');
-  return '';
-};
+// window.onbeforeunload = function() {
+//   localStorage.removeItem('token');
+//   return '';
+// };
