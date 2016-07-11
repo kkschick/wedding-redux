@@ -3,8 +3,6 @@ const less = require('less');
 const path = require('path');
 const webpack = require('webpack');
 
-require('./public/css/styles.less');
-
 module.exports = {
   entry: './public/index',
   output: {
@@ -39,6 +37,10 @@ module.exports = {
       {
         test: /\.less$/,
         loader: "style-loader!css-loader!less-loader"
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot|svg)$/,
+        loader: 'file-loader'
       }
     ]
   }

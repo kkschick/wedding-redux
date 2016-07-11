@@ -55,4 +55,4 @@ class Guest(db.Model):
     def get_guests_by_last_name(self, last_name):
         """ Get all guests with specified last name. """
 
-        return self.query.filter_by(last_name=last_name).all()
+        return self.query.filter(self.last_name.like('%' + last_name.capitalize() + '%')).all()

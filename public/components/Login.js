@@ -59,7 +59,7 @@ export default class Login extends React.Component {
               <p className="paragraph-text pink-text">
                 Not quite!<br/>
                 <span className="small-text">
-                  If you're not sure, email us at katiepluswalter(at)gmail(dot)com.
+                  If you're not sure, email us at katieandwalterparty(at)gmail(dot)com.
                 </span>
               </p>
             )}

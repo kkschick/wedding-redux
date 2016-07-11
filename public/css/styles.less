@@ -5,8 +5,34 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 @import url(https://fonts.googleapis.com/css?family=Pinyon+Script);
 
-@navy: #0E1D31;
-@light-grey: #DAD9D7;
+@font-face {
+  font-family: 'Brahms Script';
+  src: url('../assets/brahmsscript-webfont.woff2') format('woff2'),
+       url('../assets/brahmsscript-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Didoctic';
+  src: url('../assets/didoctic.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Didoctic';
+  src:  url(data:application/x-font-woff;charset=utf-8;base64,) format('woff'), url('../assets/didoctic.ttf')  format('truetype'), url('../assets/didoctic.svg#didoctic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@navy: #19415d;
+@lamp-green: #3e6b4b;
+@sea-foam: #90A6A4;
+@slate-grey: #7E8F97;
+@light-grey: #d9d4d0;
+@off-white: #eceae8;
 @gold: #C1925F;
 @coral: #F1595C;
 
@@ -31,7 +57,7 @@ body {
   margin: 0 auto;
   display: table;
   list-style: none;
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Didoctic', serif, serif;
   text-transform: uppercase;
 
   ul {
@@ -46,11 +72,11 @@ body {
       display: inline;
       padding: 10px;
       .active {
-        color: @gold;
+        color: @sea-foam;
         font-weight: 800;
       }
       a:hover {
-        color: lighten(@gold, 8%);
+        color: lighten(@sea-foam, 8%);
       }
     }
   }
@@ -102,7 +128,7 @@ body {
     form {
       text-align: center;
       input {
-        font-family: 'Old Standard TT', serif;
+        font-family: 'Didoctic', serif;
         text-transform: uppercase;
       }
     }
@@ -110,7 +136,7 @@ body {
 }
 
 button {
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Didoctic', serif;
   text-transform: uppercase;
   padding: 10px;
   margin: 10px;
@@ -126,7 +152,7 @@ button {
 }
 
 .fancy-text {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Didoctic', serif;
   font-size: 58px;
   font-weight: 100;
   margin: 15px;
@@ -139,17 +165,30 @@ button {
 }
 
 .header-large {
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Didoctic', serif;
   text-transform: uppercase;
   font-size: 30px;
   text-align: center;
   margin: 0;
 }
 
+.header-medium {
+  font-family: 'Didoctic', serif;
+  text-transform: uppercase;
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+}
+
 .paragraph-text {
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Didoctic', serif;
   font-size: 18px;
   text-align: center;
+  padding-bottom: 15px;
+}
+
+.one-line-text {
+  display: block;
 }
 
 .large-text {
@@ -175,6 +214,6 @@ button {
   color: @navy;
   font-size: 24px;
   font-weight: 500;
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Didoctic', serif;
   text-align: center;
 }

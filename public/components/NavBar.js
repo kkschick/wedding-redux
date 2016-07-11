@@ -26,7 +26,7 @@ export default class NavBar extends React.Component {
 
     return (
       <div>
-        <h1 className="fancy-text"><Link to="/" className="no-link-formatting">Katie + Walter</Link></h1>
+        <h1 className="fancy-text"><Link to="/" className="no-link-formatting">Katie & Walter</Link></h1>
         <div className="nav">
           <ul>
             { navItems.map((item, idx) =>

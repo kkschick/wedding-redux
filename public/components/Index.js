@@ -15,7 +15,7 @@ export default class Index extends React.Component {
           </span>
           <span className="small-text">
             If you have questions about anything,<br/>
-            write to us at <strong>katiepluswalter(at)gmail(dot)com!</strong>
+            write to us at <strong>katieandwalterparty(at)gmail(dot)com!</strong>
           </span>
         </div>
       </div>

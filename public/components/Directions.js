@@ -13,7 +13,7 @@ export default class Directions extends React.Component {
           If you are driving, we recommend using Google Maps to navigate.<br/>
           Parking is available in the Back Bay Garage (222 Berkeley Street)<br/>
           and is $7 for the night with validation.<br/><br/>
-          Email us at katiepluswalter(at)gmail(dot)com<br/>
+          Email us at katieandwalterparty(at)gmail(dot)com<br/>
           if you will be parking a car so we can get you a voucher!<br/><br/>
         </div>
         <h1 className="header-large">
