@@ -4,7 +4,7 @@ export default class Index extends React.Component {
   render() {
     return (
       <div className="body-container">
-        <img src="./public/img/184.jpg" /><br/>
+        <img src="./public/img/4.jpg" /><br/>
         <div className="header-large">
           Saturday, April 29, 2017
         </div>
