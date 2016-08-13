@@ -5,20 +5,23 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/dev-server',
-    './public/index'
+    './src/index'
   ],
   output: {
-    path: __dirname,
+    path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/'
   },
   resolve: {
     extensions: ['', '.js']
   },
   devtool: 'eval-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, '/dist'),
+    hot: true
+  },
   plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
@@ -26,8 +29,8 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
-        include: path.join(__dirname, 'public')
+        loader: 'babel-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.less$/,
