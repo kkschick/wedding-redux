@@ -4,8 +4,8 @@
 
 ### Clone repo
 ```
-$ git clone git@github.com:kkschick/wedding-app.git
-$ cd wedding-app/
+$ git clone git@github.com:kkschick/wedding-redux.git
+$ cd wedding-redux/
 ```
 
 ### Setup back-end
