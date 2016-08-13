@@ -121,7 +121,7 @@ body {
 .flex-grid {
   display: flex;
   margin: 0 auto;
-  max-width: 60%;
+  max-width: 55%;
   flex-flow: row; 
   flex-wrap: wrap;
   .col {
@@ -129,11 +129,10 @@ body {
     .col-box {
       flex: 0 0 100%;
       text-align: center;
-      padding: 0 10px;
+      padding: 0 15px;
     }
     .left-box {
       margin-top: 20px;
-      margin-left: 50px;
     }
   }
 }
@@ -185,6 +184,12 @@ button {
   &:hover {
     background: lighten(@light-grey, 10%);
   }
+}
+
+.gallery {
+  max-width: 50%;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .header-text {

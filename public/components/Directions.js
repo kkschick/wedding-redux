@@ -27,14 +27,23 @@ export default class Directions extends React.Component {
                 Fly
               </h1>
               <div className="paragraph-text">
-                The closest airport is Logan International Airport in Boston (15 minute drive).
+                The closest airport is Logan International Airport in Boston (15 minute drive).<br/><br/>
+                If you need a cab,&nbsp;
+                <a href="https://lyft.com/ici/KATIE625173" target="_blank">
+                  click here
+                </a>&nbsp;
+                for $50 off Lyft, or&nbsp;
+                <a href="http://www.uber.com/invite/jiaih" target="_blank">
+                  click here
+                </a>&nbsp;
+                for $20 off Uber!
               </div>
             </div>
           </div>
           <div className="col">
             <div className="col-box">
               <h1 className="header-large">
-                Public Transit
+                Train
               </h1>
               <div className="paragraph-text">
                 If you're coming via Amtrak or the MBTA Commuter Rail,

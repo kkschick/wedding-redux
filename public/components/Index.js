@@ -5,6 +5,9 @@ export default class Index extends React.Component {
     return (
       <div className="body-container">
         <img src="./public/img/184.jpg" /><br/>
+        <div className="header-large">
+          Saturday, April 29, 2017
+        </div>
         <div className="paragraph-text">
           <span className="large-text">
             We are so excited to celebrate our wedding with you!<br/>
