@@ -18,7 +18,11 @@ module.exports = {
   devtool: 'eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, '/dist'),
-    hot: true
+    hot: true,
+    historyApiFallback: true,
+    proxy: {
+      '/api/*': 'http://0.0.0.0:5000', // To hit Flask server
+    }
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
