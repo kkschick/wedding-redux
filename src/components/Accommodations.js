@@ -22,53 +22,57 @@ export default class Accommodations extends React.Component {
           </span>
         </div>
         <table className="paragraph-text">
-          <tr>
-            <th>Hotel</th>
-            <th>Rate</th>
-            <th>Make a Reservation</th>
-            <th>Other</th>
-          </tr>
-          <tr className="small-text">
-            <td>The Lenox Hotel</td>
-            <td>$279/night</td>
-            <td>Phone: Call the hotel at 617-536-5300 or 1-800-225-7676 and 
-                mention the Schick/Klyce Wedding block.
-            </td>
-            <td>—</td>
-          </tr>
-          <tr className="small-text">
-            <td>The Westin Copley Place</td>
-            <td>$299/night</td>
-            <td>Phone: Call the hotel at 1-888-627-7054 and mention 
-                the Schick & Klyce Wedding block.
-            </td>
-            <td>—</td>
-          </tr>
-          <tr className="small-text">
-            <td>The Marriott Courtyard Copley Square</td>
-            <td>$257/night</td>
-            <td>Online: Go to&nbsp;
-              <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Schick%20Klyce%20Wedding%5Ebosdt%60SKWSKWA%7CSKWSKWB%60259.00%60USD%60false%601%604/28/17%604/30/17%603/28/17&app=resvlink&stop_mobi=yes" target="_blank">
-                our special reservations link
-              </a>&nbsp; to reserve directly.<br/><br/>
-              Phone: Call the hotel at 1-800-228-9290 and mention 
-              the Schick/Klyce Wedding block.
-            </td>
-            <td>Parking is available for $45/night.</td>
-          </tr>
-          <tr className="small-text">
-            <td>The Midtown Hotel</td>
-            <td>$189/night</td>
-            <td>Online: Go to &nbsp;
-              <a href="http://www.midtownhotel.com" target="_blank">
-                www.midtownhotel.com
-              </a>&nbsp;
-              and type in the block code SCHKLYWED.<br/><br/>
-              Phone: Call the hotel at 617-262-1000 or 1-800-343-1177 and 
-              mention the Schick Klyce Wedding block.
-            </td>
-            <td>Parking is available for $29/night.</td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Hotel</th>
+              <th>Rate</th>
+              <th>Make a Reservation</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="small-text">
+              <td>The Lenox Hotel</td>
+              <td>$279/night</td>
+              <td>Phone: Call the hotel at 617-536-5300 or 1-800-225-7676 and
+                  mention the Schick/Klyce Wedding block.
+              </td>
+              <td>—</td>
+            </tr>
+            <tr className="small-text">
+              <td>The Westin Copley Place</td>
+              <td>$299/night</td>
+              <td>Phone: Call the hotel at 1-888-627-7054 and mention
+                  the Schick & Klyce Wedding block.
+              </td>
+              <td>—</td>
+            </tr>
+            <tr className="small-text">
+              <td>The Marriott Courtyard Copley Square</td>
+              <td>$257/night</td>
+              <td>Online: Go to&nbsp;
+                <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Schick%20Klyce%20Wedding%5Ebosdt%60SKWSKWA%7CSKWSKWB%60259.00%60USD%60false%601%604/28/17%604/30/17%603/28/17&app=resvlink&stop_mobi=yes" target="_blank">
+                  our special reservations link
+                </a>&nbsp; to reserve directly.<br/><br/>
+                Phone: Call the hotel at 1-800-228-9290 and mention
+                the Schick/Klyce Wedding block.
+              </td>
+              <td>Parking is available for $45/night.</td>
+            </tr>
+            <tr className="small-text">
+              <td>The Midtown Hotel</td>
+              <td>$189/night</td>
+              <td>Online: Go to &nbsp;
+                <a href="http://www.midtownhotel.com" target="_blank">
+                  www.midtownhotel.com
+                </a>&nbsp;
+                and type in the block code SCHKLYWED.<br/><br/>
+                Phone: Call the hotel at 617-262-1000 or 1-800-343-1177 and
+                mention the Schick Klyce Wedding block.
+              </td>
+              <td>Parking is available for $29/night.</td>
+            </tr>
+          </tbody>
         </table>
         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1R4azUJxyyXr4x2hLiLaMqJvMqXI"
                 width="640"
