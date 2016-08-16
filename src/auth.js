@@ -1,7 +1,11 @@
 module.exports = {
   login(password) {
     if (password === 'maggie') {
-      localStorage.setItem('token', Math.random().toString(36).substring(7));
+      let tokenObj = {
+        key: Math.random().toString(36).substring(7),
+        timestamp: new Date().getTime()
+      };
+      localStorage.setItem('token', JSON.stringify(tokenObj));
       return true;
     }
     return false;

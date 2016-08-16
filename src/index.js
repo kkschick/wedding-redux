@@ -36,6 +36,13 @@ ReactDOM.render(
 );
 
 window.onbeforeunload = function() {
-  localStorage.removeItem('token');
-  return '';
+  let tokenObj = JSON.parse(localStorage.getItem('token'));
+  if (!tokenObj){
+    return ;
+  }
+  if (new Date().getTime() > (tokenObj.timestamp + 3600000)) {
+    // Should last for an hour
+    localStorage.removeItem('token');
+  }
+  return ;
 };
