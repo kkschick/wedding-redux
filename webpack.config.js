@@ -19,10 +19,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, '/dist'),
     hot: true,
-    historyApiFallback: true,
-    proxy: {
-      '/api/*': 'http://0.0.0.0:5000', // To hit Flask server
-    }
+    historyApiFallback: true
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
