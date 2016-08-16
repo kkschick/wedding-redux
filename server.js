@@ -18,15 +18,15 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/dist/index.html')
-});
-
 app.use("/api/*", proxy('0.0.0.0:5000', {
     forwardPath: function (req, res) {
         return require('url').parse(req.baseUrl).path;
     }
 }));
+
+app.get('/*', function(request, response) {
+  response.sendFile(__dirname + '/dist/index.html')
+});
 
 app.listen(PORT, '0.0.0.0', function(error) {
   if (error) {
