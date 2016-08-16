@@ -3,7 +3,7 @@ import React from 'react';
 export default class Accommodations extends React.Component {
   render() {
     return (
-      <div>
+      <div className="outer-wrapper">
         <h1 className="header-large">Accommodations</h1>
         <div className="paragraph-text">
           <span>

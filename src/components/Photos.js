@@ -74,13 +74,13 @@ export default class Photos extends React.Component {
     ];
 
     return (
-      <div>
-      <h1 className="header-large">Photos</h1>
-      <div className="gallery">
-        <ImageGallery ref={i => this._imageGallery = i}
-                      items={images}
-                      slideInterval={2000}/>
-      </div>
+      <div className="outer-wrapper">
+        <h1 className="header-large">Photos</h1>
+        <div className="gallery">
+          <ImageGallery ref={i => this._imageGallery = i}
+                        items={images}
+                        slideInterval={2000}/>
+        </div>
       </div>
     );
   }

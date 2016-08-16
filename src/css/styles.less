@@ -38,6 +38,11 @@ body {
   }
 }
 
+.outer-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .nav {
   margin: 0 auto;
   display: table;
@@ -60,19 +65,7 @@ body {
         color: @sea-foam;
         font-weight: 800;
       }
-      
     }
-  }
-}
-
-.body-container {
-  min-width: 80%;
-  img {
-    display: block;
-    margin: 0 auto;
-    padding: 10px;
-    width: 500px;
-    border: 2px solid @light-grey;
   }
 }
 
@@ -136,13 +129,14 @@ body {
     }
     .left-box {
       margin-top: 20px;
+      margin-bottom: 20px;
     }
   }
 }
 
 table {
   margin: 0 auto;
-  max-width: 50%;
+  max-width: 60%;
   margin-bottom: 30px;
   border-collapse: collapse;
   th {
@@ -154,15 +148,19 @@ table {
   }
 }
 
-@media (max-width: 400px) {
-  .flex-grid {
-    display: block;
-  }
-}
-
 .basic-img {
   width: 380px;
   margin-bottom: 30px;
+  border: 2px solid @light-grey;
+  display: block;
+  margin: 0 auto;
+}
+
+.front-image {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  width: 500px;
   border: 2px solid @light-grey;
 }
 
@@ -286,4 +284,69 @@ a:hover {
   font-family: 'Didoctic', serif;
   text-align: center;
   padding: 5px;
+}
+
+@media (max-width: 1500px) {
+  .basic-img {
+    width: 300px;
+    margin-top: 20px;
+  }
+  .flex-grid, .gallery {
+    max-width: 65%;
+  }
+  table {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .flex-grid, .gallery {
+    max-width: 75%;
+  }
+  table {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .flex-grid, .gallery {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav ul li {
+    display: block;
+    text-align: center;
+  }
+  .header-text {
+    font-size: 48px;
+  }
+  .front-image, .basic-img {
+    width: 100%;
+  }
+  .flex-grid {
+    display: block;
+  }
+  iframe {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-text {
+    font-size: 36px;
+  }
+  .header-large {
+    font-size: 24px;
+  }
+  .large-text {
+    font-size: 18px;
+  }
+  .small-text {
+    font-size: 14px;
+  }
+  .gallery {
+    max-width: 90%;
+  }
 }

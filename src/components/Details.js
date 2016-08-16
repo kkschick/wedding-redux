@@ -3,7 +3,7 @@ import React from 'react';
 export default class Details extends React.Component {
   render() {
     return (
-      <div>
+      <div className="outer-wrapper">
         <h1 className="header-large">The Wedding</h1>
         <div className="flex-grid">
           <div className="col">

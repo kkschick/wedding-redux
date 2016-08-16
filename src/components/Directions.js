@@ -3,7 +3,7 @@ import React from 'react';
 export default class Directions extends React.Component {
   render() {
     return (
-      <div>
+      <div className="outer-wrapper">
         <div className="flex-grid">
           <div className="col">
             <div className="col-box">

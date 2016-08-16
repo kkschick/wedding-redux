@@ -3,7 +3,7 @@ import React from 'react';
 export default class Registry extends React.Component {
   render() {
     return (
-      <div>
+      <div className="outer-wrapper">
         <h1 className="header-large">Registry</h1>
         <div className="paragraph-text">
           Please know that your love, support, and presence at our wedding<br />

@@ -3,8 +3,8 @@ import React from 'react';
 export default class Index extends React.Component {
   render() {
     return (
-      <div className="body-container">
-        <img src="./img/4.jpg" /><br/>
+      <div className="outer-wrapper">
+        <img src="./img/4.jpg" className="front-image"/><br/>
         <div className="header-large">
           Saturday, April 29, 2017
         </div>
