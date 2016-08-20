@@ -12,6 +12,7 @@ class SearchForGuests(Resource):
         guests = Guest.get_guests_by_last_name(last_name)
 
         return [{
+            'id': guest.id,
             'first_name': guest.first_name,
             'last_name': guest.last_name,
             'email': guest.email

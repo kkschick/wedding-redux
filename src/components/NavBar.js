@@ -6,6 +6,8 @@ export default class NavBar extends React.Component {
     let activeRoute = this.props.active;
     if (activeRoute === '/' || activeRoute === '/admin' || activeRoute === '/login') {
       return navItems;
+    } else if (activeRoute === '/results') {
+      activeRoute = '/rsvp';
     }
     let activeNavItem = navItems.find(item => { return item.route === activeRoute; });
     activeNavItem.classNames = activeNavItem.classNames + ' active';
