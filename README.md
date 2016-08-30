@@ -1,5 +1,7 @@
 # Wedding App
 
+## Work in Progress!
+
 ## Getting Started
 
 ### Clone repo
