@@ -5,11 +5,21 @@ import { browserHistory } from 'react-router';
 import _ from 'lodash';
 
 export default class SearchBox extends React.Component {
+  static contextTypes = {
+    router: PropTypes.object,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
       lastName: ''
     };
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.partyResults) {
+      browserHistory.push('/results');
+    }
   }
 
   handleSubmit(e) {
@@ -24,9 +34,14 @@ export default class SearchBox extends React.Component {
   }
 
   handleLastName(e) {
+    e.preventDefault();
     this.setState({
       lastName: e.target.value
     });
+  }
+
+  getPartyInfo(guestId) {
+    this.props.getRsvpInfo(guestId);
   }
 
   render() {
@@ -39,9 +54,11 @@ export default class SearchBox extends React.Component {
           </h1><br />
           {this.props.searchResults.map((guest, idx) => {
             return (
-              <div key={idx} className="paragraph-text">
+              <a key={idx}
+                 className="paragraph-text"
+                 onClick={() => ::this.getPartyInfo(guest.id)}>
                 {guest.first_name} {guest.last_name}
-              </div>
+              </a>
             );
           })}
         </div>

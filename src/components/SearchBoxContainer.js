@@ -11,6 +11,7 @@ export default class SearchBoxContainer extends React.Component {
       <div className="outer-wrapper">
         <SearchBox searchResults={this.props.searchResults}
                    errorMessage={this.props.errorMessage}
+                   partyResults={this.props.partyResults}
                    getGuestsByLastName={(lastName) => this.props.onGetGuestsByLastName(lastName)}
                    getRsvpInfo={(guestId) => this.props.onGetRsvpInfo(guestId)}/>
       </div>
