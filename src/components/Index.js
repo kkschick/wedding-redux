@@ -8,6 +8,7 @@ export default class Index extends React.Component {
         <div className="header-large">
           Saturday, April 29, 2017
         </div>
+        <img src="./img/masthead.png" className="centered-masthead" />
         <div className="paragraph-text">
           <span className="large-text">
             We are so excited to celebrate our wedding with you!<br/>

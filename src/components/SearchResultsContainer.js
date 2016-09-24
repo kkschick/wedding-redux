@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import SearchResults from './SearchResults';
 
-export default class SearchResultsContainer extends React.Component {
+class SearchResultsContainer extends React.Component {
   render() {
     return (
       <div className="outer-wrapper">

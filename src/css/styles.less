@@ -75,6 +75,7 @@ body {
   min-height: 300px;
   margin: 0 auto;
   margin-top: 50px;
+  margin-bottom: 50px;
   position: relative;
   border: 3px solid @light-grey;
   &:before {
@@ -121,7 +122,7 @@ form {
 .flex-grid {
   display: flex;
   margin: 0 auto;
-  max-width: 55%;
+  max-width: 100%;
   flex-flow: row; 
   flex-wrap: wrap;
   .col {
@@ -129,7 +130,7 @@ form {
     .col-box {
       flex: 0 0 100%;
       text-align: center;
-      padding: 0 15px;
+      padding: 0 30px;
     }
     .left-box {
       margin-top: 20px;
@@ -168,6 +169,16 @@ table {
   border: 2px solid @light-grey;
 }
 
+.header-image {
+  height: 150px;
+  margin-bottom: -50px;
+}
+
+.centered-masthead {
+  width: 40%;
+  margin-left: 30%;
+}
+
 iframe {
   margin: 0 auto;
   margin-top: 20px;
@@ -198,11 +209,17 @@ button {
   margin-bottom: 30px;
 }
 
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .header-text {
+  display: inline;
   font-family: 'Didoctic', serif;
   font-size: 64px;
   font-weight: 100;
-  margin: 15px;
+  margin: 25px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -289,6 +306,8 @@ a:hover {
   font-family: 'Didoctic', serif;
   text-align: center;
   padding: 5px;
+  text-align: center;
+  display: inline;
 }
 
 @media (max-width: 1500px) {
@@ -296,7 +315,10 @@ a:hover {
     width: 300px;
     margin-top: 20px;
   }
-  .flex-grid, .gallery {
+  .flex-grid {
+    max-width: 100%;
+  }
+  .gallery {
     max-width: 65%;
   }
   table {
@@ -305,7 +327,10 @@ a:hover {
 }
 
 @media (max-width: 1200px) {
-  .flex-grid, .gallery {
+  .flex-grid {
+    max-width: 100%;
+  }
+  .gallery {
     max-width: 75%;
   }
   table {
@@ -327,6 +352,10 @@ a:hover {
   .header-text {
     font-size: 48px;
   }
+  .header-image {
+    height: 120px;
+    margin-bottom: -40px;
+  }
   .front-image, .basic-img {
     width: 100%;
   }
@@ -341,6 +370,10 @@ a:hover {
 @media (max-width: 640px) {
   .header-text {
     font-size: 36px;
+  }
+  .header-image {
+    height: 100px;
+    margin-bottom: -40px;
   }
   .header-large {
     font-size: 24px;

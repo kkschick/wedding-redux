@@ -5,10 +5,6 @@ import { browserHistory } from 'react-router';
 import _ from 'lodash';
 
 export default class SearchBox extends React.Component {
-  static contextTypes = {
-    router: PropTypes.object,
-  };
-
   constructor(props) {
     super(props);
     this.state = {

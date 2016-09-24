@@ -12,12 +12,12 @@ export function getGuestsByLastName(lastName) {
       if (response.ok) {
         return response.json();
       } else {
-        dispatch({type: types.GUEST_SEARCH_FAILURE, error: 'Failed to retrieve guests. Please try again.'});
+        dispatch({type: types.GUEST_SEARCH_FAILURE, error: "Whoops! We couldn't get your information. Please try again."});
       }
     }).then((responseJson) => {
       dispatch({type: types.GUEST_SEARCH_SUCCESS, data: responseJson});
     }).catch((error) => {
-      dispatch({type: types.GUEST_SEARCH_FAILURE, error: 'Failed to retrieve guests. Please try again.'});
+      dispatch({type: types.GUEST_SEARCH_FAILURE, error: "Whoops! We couldn't get your information. Please try again."});
     });
   };
 }

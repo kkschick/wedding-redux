@@ -5,7 +5,7 @@ import SearchBox from './SearchBox';
 
 import { getGuestsByLastName, getRsvpInfo } from '../actions/rsvpActions';
 
-export default class SearchBoxContainer extends React.Component {
+class SearchBoxContainer extends React.Component {
   render() {
     return (
       <div className="outer-wrapper">

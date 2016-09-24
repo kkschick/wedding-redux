@@ -11,8 +11,11 @@ export default class Directions extends React.Component {
                 Drive
               </h1>
               <div className="paragraph-text">
-                If you're driving, we recommend using Google Maps for directions.
-                Parking is available in the Back Bay Garage (222 Berkeley Street)
+                If you're driving, we recommend using Google Maps for directions.<br/><br/>
+                Parking is available in the Back Bay Garage (
+                  <a href="https://www.google.com/maps/place/Back+Bay+Garage/@42.3506216,-71.0754343,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a0b5a813773:0xce1fbe9cc3a03e83!8m2!3d42.3506216!4d-71.0732456" target="_blank">
+                    222 Berkeley Street
+                  </a>)
                 and is $7 for the night with validation.<br/><br/>
                 <span className="small-text">
                   Email us at katieandwalterparty(at)gmail(dot)com

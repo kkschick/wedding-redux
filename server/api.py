@@ -8,7 +8,7 @@ class SearchForGuests(Resource):
     def get(self, last_name):
         """ Get list of guests with specified last name. """ 
 
-        from model import Guest
+        from app import Guest
         guests = Guest.get_guests_by_last_name(last_name)
 
         return [{
@@ -25,7 +25,7 @@ class Guest(Resource):
             party information.
         """ 
 
-        from model import Guest, Party
+        from app import Guest, Party
         guest = Guest.get_guest_by_id(guest_id)
         party = Party.get_party_by_id(guest.party_id)
 
