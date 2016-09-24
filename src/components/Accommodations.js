@@ -4,7 +4,6 @@ export default class Accommodations extends React.Component {
   render() {
     return (
       <div className="outer-wrapper">
-        <h1 className="header-large">Accommodations</h1>
         <div className="paragraph-text">
           <span>
             We have hotel blocks at four hotels around the Boston Public Library,<br/>
@@ -34,8 +33,12 @@ export default class Accommodations extends React.Component {
             <tr className="small-text">
               <td>The Lenox Hotel</td>
               <td>$279/night</td>
-              <td>Phone: Call the hotel at 617-536-5300 or 1-800-225-7676 and
-                  mention the Schick/Klyce Wedding block.
+              <td>Online: Go to&nbsp;
+                <a href="http://www.phgsecure.com/IBE/bookingRedirect.ashx?propertyCode=BOSLH&arrivalDate=04/28/2017&group=sc042817" target="_blank">
+                  our special reservations link
+                </a>&nbsp; to reserve.<br/><br/>
+                Phone: Call the hotel at 617-536-5300 or 1-800-225-7676 and
+                mention the Schick/Klyce Wedding block.
               </td>
               <td>—</td>
             </tr>
@@ -53,7 +56,7 @@ export default class Accommodations extends React.Component {
               <td>Online: Go to&nbsp;
                 <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Schick%20Klyce%20Wedding%5Ebosdt%60SKWSKWA%7CSKWSKWB%60259.00%60USD%60false%601%604/28/17%604/30/17%603/28/17&app=resvlink&stop_mobi=yes" target="_blank">
                   our special reservations link
-                </a>&nbsp; to reserve directly.<br/><br/>
+                </a>&nbsp; to reserve.<br/><br/>
                 Phone: Call the hotel at 1-800-228-9290 and mention
                 the Schick/Klyce Wedding block.
               </td>

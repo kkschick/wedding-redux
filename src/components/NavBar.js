@@ -16,7 +16,7 @@ export default class NavBar extends React.Component {
 
   render() {
     let navItems = [
-      { name: 'The Wedding', route: '/details', classNames: 'no-link-formatting'},
+      { name: 'The Weekend', route: '/details', classNames: 'no-link-formatting'},
       { name: 'Directions', route: '/directions', classNames: 'no-link-formatting'},
       { name: 'Accommodations', route: '/accommodations', classNames: 'no-link-formatting'},
       { name: 'Photos', route: '/photos', classNames: 'no-link-formatting'},
@@ -28,7 +28,13 @@ export default class NavBar extends React.Component {
 
     return (
       <div>
-        <h1 className="header-text"><Link to="/" className="no-link-formatting no-header-formatting">Katie & Walter</Link></h1>
+        <div className="header">
+          <Link to="/" className="no-link-formatting no-header-formatting">
+            <h1 className="header-text">&nbsp;&nbsp;&nbsp;Katie</h1>
+            <img src="./img/logo.png" className="header-image" />
+            <h1 className="header-text">Walter</h1>
+          </Link>
+        </div>
         <div className="nav">
           <ul>
             { navItems.map((item, idx) =>

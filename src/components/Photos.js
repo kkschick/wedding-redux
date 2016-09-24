@@ -24,6 +24,10 @@ export default class Photos extends React.Component {
         thumbnail: './img/4.jpg'
       },
       {
+        original: './img/14.png',
+        thumbnail: './img/14.png'
+      },
+      {
         original: './img/5.png',
         thumbnail: './img/5.png'
       },
@@ -60,10 +64,6 @@ export default class Photos extends React.Component {
         thumbnail: './img/13.jpg'
       },
       {
-        original: './img/14.png',
-        thumbnail: './img/14.png'
-      },
-      {
         original: './img/15.png',
         thumbnail: './img/15.png'
       },
@@ -75,7 +75,6 @@ export default class Photos extends React.Component {
 
     return (
       <div className="outer-wrapper">
-        <h1 className="header-large">Photos</h1>
         <div className="gallery">
           <ImageGallery ref={i => this._imageGallery = i}
                         items={images}

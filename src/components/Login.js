@@ -17,6 +17,10 @@ export default class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    if (!this.state.password) {
+      return this.setState({ error: true });
+    }
+
     let password = this.state.password.toLowerCase();
     let loggedIn = auth.login(password);
 

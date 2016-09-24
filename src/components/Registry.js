@@ -4,7 +4,6 @@ export default class Registry extends React.Component {
   render() {
     return (
       <div className="outer-wrapper">
-        <h1 className="header-large">Registry</h1>
         <div className="paragraph-text">
           Please know that your love, support, and presence at our wedding<br />
           means more to us than any present. But, if you must get us a gift,<br />
