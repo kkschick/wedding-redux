@@ -11,7 +11,7 @@ class SearchBoxContainer extends React.Component {
       <div className="outer-wrapper">
         <SearchBox searchResults={this.props.searchResults}
                    errorMessage={this.props.errorMessage}
-                   partyResults={this.props.partyResults}
+                   guestResults={this.props.guestResults}
                    getGuestsByName={(firstName, lastName) => this.props.onGetGuestsByName(firstName, lastName)}
                    getRsvpInfo={(guestId) => this.props.onGetRsvpInfo(guestId)}/>
       </div>
@@ -23,7 +23,7 @@ function mapStateToProps(state) {
   return {
     searchResults: state.rsvpReducer.searchResults,
     errorMessage: state.rsvpReducer.errorMessage,
-    partyResults: state.rsvpReducer.partyResults
+    guestResults: state.rsvpReducer.guestResults
   };
 }
 

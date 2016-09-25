@@ -28,11 +28,6 @@ class Party(db.Model):
     state = db.Column(db.String(64), nullable=True)
     zip_code = db.Column(db.String(64), nullable=True)
     country = db.Column(db.String(64), nullable=True)
-    std_sent = db.Column(db.Date, nullable=True)
-    invitation_sent = db.Column(db.Date, nullable=True)
-    gift_received = db.Column(db.Date, nullable=True)
-    gift = db.Column(db.Text, nullable=True)
-    thank_you_sent = db.Column(db.Date, nullable=True)
     needs_parking = db.Column(db.Boolean, nullable=True)
     num_parking_spots = db.Column(db.Integer)
     guests = db.relationship('Guest', backref='parties')
@@ -56,7 +51,10 @@ class Guest(db.Model):
     food_pref = db.Column(db.String(64))
     dietary_restrictions = db.Column(db.String(64))
     rsvp_received = db.Column(db.Date, nullable=True)
-    is_coming = db.Column(db.Boolean, nullable=True)
+    is_coming_wedding = db.Column(db.Boolean, nullable=True)
+    is_coming_brunch = db.Column(db.Boolean, nullable=True)
+    is_coming_fri = db.Column(db.Boolean, nullable=True)
+    is_coming_picnic = db.Column(db.Boolean, nullable=True)
     comments = db.Column(db.Text, nullable=True)
 
     @classmethod
