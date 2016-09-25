@@ -30,13 +30,41 @@ class Guest(Resource):
         party = Party.get_party_by_id(guest.party_id)
 
         return [{
-                'first_name': guest.first_name,
-                'last_name': guest.last_name,
-                'is_coming': guest.is_coming,
-                'food_pref': guest.food_pref,
-                'dietary_restrictions': guest.dietary_restrictions,
-                'needs_parking': party.needs_parking,
-                'num_parking_spots': party.num_parking_spots,
-                'comments': guest.comments,
-                'party_id': guest.party_id
-            } for guest in party.guests]
+            'first_name': guest.first_name,
+            'last_name': guest.last_name,
+            'is_coming_wedding': guest.is_coming_wedding,
+            'is_coming_brunch': guest.is_coming_brunch,
+            'is_coming_fri': guest.is_coming_fri,
+            'is_coming_picnic': guest.is_coming_picnic,
+            'food_pref': guest.food_pref,
+            'dietary_restrictions': guest.dietary_restrictions,
+            'needs_parking': party.needs_parking,
+            'num_parking_spots': party.num_parking_spots,
+            'comments': guest.comments,
+            'party_id': guest.party_id
+        }]
+
+@wedding_api.resource('/party/<int:guest_id>')
+class Party(Resource):
+    def get(self, guest_id):
+        """ Get party by guest id.
+        """ 
+
+        from app import Guest, Party
+        guest = Guest.get_guest_by_id(guest_id)
+        party = Party.get_party_by_id(guest.party_id)
+
+        return [{
+            'first_name': guest.first_name,
+            'last_name': guest.last_name,
+            'is_coming_wedding': guest.is_coming_wedding,
+            'is_coming_brunch': guest.is_coming_brunch,
+            'is_coming_fri': guest.is_coming_fri,
+            'is_coming_picnic': guest.is_coming_picnic,
+            'food_pref': guest.food_pref,
+            'dietary_restrictions': guest.dietary_restrictions,
+            'needs_parking': party.needs_parking,
+            'num_parking_spots': party.num_parking_spots,
+            'comments': guest.comments,
+            'party_id': guest.party_id
+        } for guest in party.guests]

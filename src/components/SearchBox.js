@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import _ from 'lodash';
+import RsvpForm from './RsvpForm';
 
 export default class SearchBox extends React.Component {
   constructor(props) {
@@ -11,12 +11,6 @@ export default class SearchBox extends React.Component {
       lastName: ''
     };
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.partyResults) {
-  //     window.location.replace('/results');
-  //   }
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -84,7 +78,7 @@ export default class SearchBox extends React.Component {
         </p>
       );
     }
-    if (!this.props.partyResults) {
+    if (!this.props.guestResults) {
       boxContent = (
         <div>
           <h1 className="header-medium">
@@ -111,11 +105,8 @@ export default class SearchBox extends React.Component {
         </div>
       );
     } else {
-      console.log(this.props.partyResults);
       boxContent = (
-        <div>
-          YO
-        </div>
+        <RsvpForm party={this.props.guestResults}/>
       );
     }
 

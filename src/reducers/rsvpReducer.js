@@ -1,6 +1,6 @@
 import * as types from '../actions/actionTypes';
 
-function rsvpReducer(state = {searchResults: [], partyResults: null, errorMessage: ''}, action) {
+function rsvpReducer(state = {searchResults: [], guestResults: null, errorMessage: ''}, action) {
   switch (action.type) {
     case types.GUEST_SEARCH_SUCCESS:
       let errorMsg;
@@ -15,7 +15,7 @@ function rsvpReducer(state = {searchResults: [], partyResults: null, errorMessag
     case types.GET_RSVP_SUCCESS:
       return {
         ...state,
-        partyResults: [ ...action.data ]
+        guestResults: [ ...action.data ]
       }
     case types.GUEST_SEARCH_FAILURE:
     case types.GET_RSVP_FAILURE:
