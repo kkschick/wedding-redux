@@ -3,13 +3,13 @@ from flask_restful import Api, Resource
 
 wedding_api = Api(Blueprint('wedding_api', __name__))
 
-@wedding_api.resource('/search/<last_name>')
+@wedding_api.resource('/search/<name>')
 class SearchForGuests(Resource):
-    def get(self, last_name):
-        """ Get list of guests with specified last name. """ 
+    def get(self, name):
+        """ Get list of guests with specified name. """ 
 
         from app import Guest
-        guests = Guest.get_guests_by_last_name(last_name)
+        guests = Guest.get_guests_by_name(name)
 
         return [{
             'id': guest.id,

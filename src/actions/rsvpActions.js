@@ -1,9 +1,9 @@
 import * as types from './actionTypes';
 
-export function getGuestsByLastName(lastName) {
+export function getGuestsByName(firstName, lastName) {
   return function(dispatch) {
     dispatch({type: types.GUEST_SEARCH_REQUEST});
-    fetch(`/api/search/${lastName}`, {
+    fetch(`/api/search/${firstName}&${lastName}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'

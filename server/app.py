@@ -66,10 +66,12 @@ class Guest(db.Model):
         return self.query.filter_by(id=guest_id).first()
 
     @classmethod
-    def get_guests_by_last_name(self, last_name):
+    def get_guests_by_name(self, name):
         """ Get all guests with specified last name. """
 
-        return self.query.filter(self.last_name.like('%' + last_name.capitalize() + '%')).all()
+        first_name, last_name = name.split('&')
+        return self.query.filter(self.first_name.like('%' + first_name.capitalize() + '%'))\
+        				 .filter(self.last_name.like('%' + last_name.capitalize() + '%')).all()
 
 
 with app.app_context():

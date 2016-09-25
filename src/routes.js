@@ -13,7 +13,6 @@ import Login from './components/Login';
 import Photos from './components/Photos';
 import Registry from './components/Registry';
 import SearchBoxContainer from './components/SearchBoxContainer';
-import SearchResultsContainer from './components/SearchResultsContainer';
 
 function requireAuth(nextState, replace) {
   if (!auth.loggedIn()) {
@@ -35,7 +34,6 @@ const routes = (
       <Route path="/photos" component={Photos} onEnter={requireAuth}/>
       <Route path="/registry" component={Registry} onEnter={requireAuth}/>
       <Route path="/rsvp" component={SearchBoxContainer} onEnter={requireAuth}/>
-      <Route path="/results" component={SearchResultsContainer} onEnter={requireAuth}/>
       <Route path="/admin" component={Admin} onEnter={requireAuth}/>
     </Route>
   </Router>

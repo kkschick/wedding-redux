@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
 
 import _ from 'lodash';
 
@@ -8,25 +7,36 @@ export default class SearchBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      firstName: '',
       lastName: ''
     };
   }
 
-  componentWillReceiveProps(newProps) {
-    if (newProps.partyResults) {
-      browserHistory.push('/results');
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.partyResults) {
+  //     window.location.replace('/results');
+  //   }
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.lastName) {
-      this.props.getGuestsByLastName(this.state.lastName);
+    if (this.state.firstName && this.state.lastName) {
+      this.setState({
+        error: ''
+      });
+      this.props.getGuestsByName(this.state.firstName, this.state.lastName);
     } else {
       this.setState({
-        error: 'Please enter a last name!'
+        error: 'Please enter both a first and last name!'
       });
     }
+  }
+
+  handleFirstName(e) {
+    e.preventDefault();
+    this.setState({
+      firstName: e.target.value
+    });
   }
 
   handleLastName(e) {
@@ -41,7 +51,7 @@ export default class SearchBox extends React.Component {
   }
 
   render() {
-    let errorBox, resultsList;
+    let errorBox, resultsList, boxContent;
     if (this.props.searchResults.length > 0) {
       resultsList = (
         <div>
@@ -57,6 +67,10 @@ export default class SearchBox extends React.Component {
               </a>
             );
           })}
+          <br/><br/>
+          <span className="paragraph-text small-text">
+            (If none of the above, check your spelling and search again!)
+          </span>
         </div>
       );
     }
@@ -70,27 +84,46 @@ export default class SearchBox extends React.Component {
         </p>
       );
     }
-
-    return (
-      <div className="form-container">
-        <div className="form-inner">
+    if (!this.props.partyResults) {
+      boxContent = (
+        <div>
           <h1 className="header-medium">
-            Let's find your RSVP!
-          </h1><br/>
+              Let's find your RSVP!
+            </h1><br/>
           <div className="paragraph-text">
-            Enter your last name as it appears on your invitation:
+            Enter your name as it appears on your invitation:
           </div>
           <form className="form-element" onSubmit={::this.handleSubmit}>
+              <input value={this.state.firstName}
+                     placeholder="Enter first name"
+                     className="form-element"
+                     onChange={::this.handleFirstName} />&nbsp;&nbsp;&nbsp;&nbsp;
               <input value={this.state.lastName}
                      placeholder="Enter last name"
                      className="form-element"
                      onChange={::this.handleLastName} />
-              <br/>
+              <br/><br/>
               <button type="submit">Submit</button>
               {errorBox}
               {resultsList}
-            </form>
-          </div>
+              <br/>
+          </form>
+        </div>
+      );
+    } else {
+      console.log(this.props.partyResults);
+      boxContent = (
+        <div>
+          YO
+        </div>
+      );
+    }
+
+    return (
+      <div className="form-container">
+        <div className="form-inner">
+          {boxContent}
+        </div>
       </div>
     );
   }
