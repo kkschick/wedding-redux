@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import SearchBox from './SearchBox';
 
-import { getGuestsByLastName, getRsvpInfo } from '../actions/rsvpActions';
+import { getGuestsByName, getRsvpInfo } from '../actions/rsvpActions';
 
 class SearchBoxContainer extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class SearchBoxContainer extends React.Component {
         <SearchBox searchResults={this.props.searchResults}
                    errorMessage={this.props.errorMessage}
                    partyResults={this.props.partyResults}
-                   getGuestsByLastName={(lastName) => this.props.onGetGuestsByLastName(lastName)}
+                   getGuestsByName={(firstName, lastName) => this.props.onGetGuestsByName(firstName, lastName)}
                    getRsvpInfo={(guestId) => this.props.onGetRsvpInfo(guestId)}/>
       </div>
     );
@@ -29,7 +29,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onGetGuestsByLastName: (lastName) => dispatch(getGuestsByLastName(lastName)),
+    onGetGuestsByName: (firstName, lastName) => dispatch(getGuestsByName(firstName, lastName)),
     onGetRsvpInfo: (guestId) => dispatch(getRsvpInfo(guestId))
   };
 }

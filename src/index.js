@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -15,11 +16,12 @@ require('./css/image-gallery.less');
 let createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 const RootReducer = combineReducers({
-  rsvpReducer: rsvpReducer
+  rsvpReducer: rsvpReducer,
+  routing: routerReducer
 });
 
 const store = createStoreWithMiddleware(RootReducer, window.__INITIAL_STATE__);
-
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
   <div>
@@ -27,7 +29,7 @@ ReactDOM.render(
       <div>
         <Router
           routes={ routes }
-          history={ browserHistory }
+          history={ history }
         />
       </div>
     </Provider>
