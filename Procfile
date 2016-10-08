@@ -1,2 +1,1 @@
-server: python server/app.py
-web: npm start
+web: python server/app.py && npm start
