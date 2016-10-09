@@ -7,67 +7,38 @@ export default class SearchBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: ''
+      guestName: null,
     };
+  }
+
+  componentDidMount() {
+    this.props.getAllRsvpInfo();
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.firstName && this.state.lastName) {
+    if (this.state.guestName) {
       this.setState({
         error: ''
       });
-      this.props.getGuestsByName(this.state.firstName, this.state.lastName);
+      this.props.getRsvpInfo(this.state.guestName);
     } else {
       this.setState({
-        error: 'Please enter both a first and last name!'
+        error: 'Please enter your name!'
       });
     }
   }
 
-  handleFirstName(e) {
+  handleGuestName(e) {
     e.preventDefault();
     this.setState({
-      firstName: e.target.value
+      guestName: e.target.value
     });
-  }
-
-  handleLastName(e) {
-    e.preventDefault();
-    this.setState({
-      lastName: e.target.value
-    });
-  }
-
-  getPartyInfo(guestId) {
-    this.props.getRsvpInfo(guestId);
   }
 
   render() {
-    let errorBox, resultsList, boxContent;
-    if (this.props.searchResults.length > 0) {
-      resultsList = (
-        <div>
-          <h1 className="header-medium">
-            Which of these is you?
-          </h1><br />
-          {this.props.searchResults.map((guest, idx) => {
-            return (
-              <a key={idx}
-                 className="paragraph-text"
-                 onClick={() => ::this.getPartyInfo(guest.id)}>
-                {guest.first_name} {guest.last_name}
-              </a>
-            );
-          })}
-          <br/><br/>
-          <span className="paragraph-text small-text">
-            (If none of the above, check your spelling and search again!)
-          </span>
-        </div>
-      );
-    }
+    console.log(this.props);
+    let errorBox, boxContent;
     if (this.state.error || this.props.errorMessage) {
       errorBox = (
         <p className="paragraph-text pink-text">
@@ -78,35 +49,31 @@ export default class SearchBox extends React.Component {
         </p>
       );
     }
-    if (!this.props.guestResults) {
+    if (!this.props.gotRsvp) {
       boxContent = (
         <div>
           <h1 className="header-medium">
               Let's find your RSVP!
             </h1><br/>
           <div className="paragraph-text">
-            Enter your name as it appears on your invitation:
+            Enter your first and last names as they appear on your invitation:
           </div>
           <form className="form-element" onSubmit={::this.handleSubmit}>
-              <input value={this.state.firstName}
-                     placeholder="Enter first name"
+              <input value={this.state.guestName}
+                     placeholder="Enter full name"
                      className="form-element"
-                     onChange={::this.handleFirstName} />&nbsp;&nbsp;&nbsp;&nbsp;
-              <input value={this.state.lastName}
-                     placeholder="Enter last name"
-                     className="form-element"
-                     onChange={::this.handleLastName} />
+                     onChange={::this.handleGuestName} />
               <br/><br/>
               <button type="submit">Submit</button>
               {errorBox}
-              {resultsList}
               <br/>
           </form>
         </div>
       );
     } else {
       boxContent = (
-        <RsvpForm party={this.props.guestResults}/>
+        <RsvpForm currentGuest={this.props.currentGuest}
+                  guestRsvp={this.props.guestRsvp} />
       );
     }
 

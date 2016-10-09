@@ -3,17 +3,19 @@ import { connect } from 'react-redux';
 
 import SearchBox from './SearchBox';
 
-import { getGuestsByName, getRsvpInfo } from '../actions/rsvpActions';
+import { getAllRsvpInfo, getRsvpInfo, goBack } from '../actions/rsvpActions';
 
 class SearchBoxContainer extends React.Component {
   render() {
     return (
       <div className="outer-wrapper">
-        <SearchBox searchResults={this.props.searchResults}
+        <SearchBox allRsvps={this.props.allRsvps}
+                   guestRsvp={this.props.guestRsvp}
+                   gotRsvp={this.props.gotRsvp}
+                   currentGuest={this.props.currentGuest}
                    errorMessage={this.props.errorMessage}
-                   guestResults={this.props.guestResults}
-                   getGuestsByName={(firstName, lastName) => this.props.onGetGuestsByName(firstName, lastName)}
-                   getRsvpInfo={(guestId) => this.props.onGetRsvpInfo(guestId)}/>
+                   getAllRsvpInfo={() => this.props.onGetAllRsvpInfo()}
+                   getRsvpInfo={(guestName) => this.props.onGetRsvpInfo(guestName)}/>
       </div>
     );
   }
@@ -21,16 +23,18 @@ class SearchBoxContainer extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    searchResults: state.rsvpReducer.searchResults,
-    errorMessage: state.rsvpReducer.errorMessage,
-    guestResults: state.rsvpReducer.guestResults
+    allRsvps: state.rsvpReducer.allRsvps,
+    guestRsvp: state.rsvpReducer.guestRsvp,
+    gotRsvp: state.rsvpReducer.gotRsvp,
+    currentGuest: state.rsvpReducer.currentGuest,
+    errorMessage: state.rsvpReducer.errorMessage
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onGetGuestsByName: (firstName, lastName) => dispatch(getGuestsByName(firstName, lastName)),
-    onGetRsvpInfo: (guestId) => dispatch(getRsvpInfo(guestId))
+    onGetAllRsvpInfo: () => dispatch(getAllRsvpInfo()),
+    onGetRsvpInfo: (guestName) => dispatch(getRsvpInfo(guestName))
   };
 }
 
