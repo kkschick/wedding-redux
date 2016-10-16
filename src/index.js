@@ -13,6 +13,7 @@ import rsvpReducer from './reducers/rsvpReducer';
 
 require('./css/styles.less');
 require('./css/image-gallery.less');
+require('./css/react-spinner.less');
 
 const createStoreWithMiddleware = compose(
   applyMiddleware(thunk),

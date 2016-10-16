@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 
 import { submitFormData } from '../actions/rsvpActions';
+import Spinner from '../vendor/react-spinner';
 
 class RsvpForm extends React.Component {
   render() {
@@ -96,6 +97,7 @@ class RsvpForm extends React.Component {
           </div>
         </div>
         <button type="submit">Submit</button>
+        { this.props.isLoading && <Spinner /> }
       </form>
     );
   }

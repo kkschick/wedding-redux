@@ -12,6 +12,7 @@ class RsvpContainer extends React.Component {
         <RsvpSearch guestRsvp={this.props.guestRsvp}
                     gotRsvp={this.props.gotRsvp}
                     errorMessage={this.props.errorMessage}
+                    isLoading={this.props.isLoading}
                     sentRsvp={this.props.sentRsvp}
                     getRsvpInfo={(guestName) => this.props.onGetRsvpInfo(guestName)}
                     resetRsvp={() => this.props.onResetRsvp()}
@@ -26,6 +27,7 @@ function mapStateToProps(state) {
     guestRsvp: state.rsvpReducer.guestRsvp,
     gotRsvp: state.rsvpReducer.gotRsvp,
     errorMessage: state.rsvpReducer.errorMessage,
+    isLoading: state.rsvpReducer.isLoading,
     sentRsvp: state.rsvpReducer.sentRsvp
   };
 }

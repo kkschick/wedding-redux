@@ -25,7 +25,7 @@ function requestRsvpInfoFailure(error) {
   }
 }
 
-function sendRsvp() {
+function sendRsvpRequest() {
   return {
     type: types.SEND_RSVP_REQUEST
   }
@@ -72,7 +72,7 @@ export function getRsvpInfo(guestName) {
 export function submitFormData(data) {
   data.name = data.name.toLowerCase();
   return function(dispatch) {
-    dispatch(sendRsvp());
+    dispatch(sendRsvpRequest());
     return fetch(`${BASE_API_URL}/name/${data.name}`, {
       method: 'PUT',
       headers: {

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import RsvpForm from './RsvpForm';
+import Spinner from '../vendor/react-spinner';
 
 export default class RsvpSearch extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ export default class RsvpSearch extends React.Component {
 
   render() {
     let errorBox, boxContent;
-    console.log(this.props.gotRsvp);
+
     if (this.state.error || this.props.errorMessage) {
       errorBox = (
         <p className="paragraph-text pink-text">
@@ -67,6 +68,7 @@ export default class RsvpSearch extends React.Component {
                      onChange={::this.handleGuestName} />
               <br/><br/>
               <button type="submit">Submit</button>
+              { this.props.isLoading && <Spinner /> }
               {errorBox}
           </form>
         </div>
@@ -82,6 +84,7 @@ export default class RsvpSearch extends React.Component {
       );
     } else {
       boxContent = <RsvpForm guestRsvp={this.props.guestRsvp}
+                             isLoading={this.props.isLoading}
                              onSubmit={this.props.onSubmit} />;
     }
 
