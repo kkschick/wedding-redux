@@ -7,6 +7,7 @@ import { submitFormData } from '../actions/rsvpActions';
 class RsvpForm extends React.Component {
   render() {
     const { handleSubmit } = this.props;
+
     return (
       <form className="form-element paragraph-text" onSubmit={handleSubmit}>
         <div>
@@ -20,11 +21,11 @@ class RsvpForm extends React.Component {
           <label>Will you be able to attend the wedding?</label>
           <div className="form-field">
             <label>
-              <Field name="isComingWedding" component="input" type="radio" value="TRUE"/>
+              <Field name="isComingWedding" component="input" type="radio" value={'true'} />
                 &nbsp;Yes&nbsp;&nbsp;
             </label>
             <label>
-              <Field name="isComingWedding" component="input" type="radio" value="FALSE"/>
+              <Field name="isComingWedding" component="input" type="radio" value={'false'} />
                 &nbsp;No
             </label>
           </div>
@@ -51,11 +52,11 @@ class RsvpForm extends React.Component {
           <label>Will you need parking?</label>
           <div className="form-field">
             <label>
-              <Field name="needsParking" component="input" type="radio" value="TRUE"/>
+              <Field name="needsParking" component="input" type="radio" value={'true'}/>
                 &nbsp;Yes&nbsp;&nbsp;
             </label>
             <label>
-              <Field name="needsParking" component="input" type="radio" value="FALSE"/>
+              <Field name="needsParking" component="input" type="radio" value={'false'}/>
                 &nbsp;No
             </label>
           </div>
@@ -65,11 +66,11 @@ class RsvpForm extends React.Component {
           <div className="form-field">
             <Field name="numParkingSpots" component="input" type="number" placeholder="# spots" className="input-spots" />
           </div><br/>
-          <span className="smaller-text">* With a voucher, you can park for $7/car at the Back Bay Garage.</span><br/>
+          <span className="smaller-text">* With a voucher, you can park for $7/car at the Back Bay Garage.</span><br/><br/>
         </div>
         <hr />
         <div>
-          <label>Which of these other events will you be able to attend?</label><br/>
+          <div className="paragraph-text">Which of these other events will you be able to attend?</div>
           <label htmlFor="isComingFri">Friday Welcome Party (4/28, 9:30pm-12am):</label>
           <div className="form-field">
             <Field name="isComingFri" id="isComingFri" component="input" type="checkbox"/>
@@ -82,7 +83,7 @@ class RsvpForm extends React.Component {
           </div>
         </div>
         <div>
-          <label htmlFor="isComingBrunch">Sunday Brunch (4/30, 10am-1pm):</label>
+          <label htmlFor="isComingBrunch">Sunday Bluegrass Brunch (4/30, 10am-1pm):</label>
           <div className="form-field">
             <Field name="isComingBrunch" id="isComingBrunch" component="input" type="checkbox"/>
           </div>

@@ -49,17 +49,13 @@ export default class Details extends React.Component {
                 <em>Ceremony at 7pm<br/>
                 Cocktails & reception to follow<br/><br/></em>
               </span>
-              <span className="paragraph-text smaller-text">
-                (If you like to go to bed early like Katie does,<br/>
-                be sure to rest up in preparation!)
-              </span>
               <img src="./img/bpl-exterior.jpg" className="basic-img"/><br/><br/><br/>
             </div>
           </div>
           <div className="col">
             <div className="col-box left-box">
               <h1 className="header-large">
-                Farewell Brunch
+                Bluegrass Brunch
               </h1>
               <span className="header-medium">
                 Sunday, April 30th<br/>
@@ -68,7 +64,7 @@ export default class Details extends React.Component {
                 10am-1pm at the XX Hotel<br/><br/>
 
                 Esther Pearson, the groom's grandmother, is hosting a Sunday brunch in the newlyweds' honor.<br/><br/>
-                Come eat some delicious food and say farewell to Katie & Walter!<br/><br/><br/>
+                Come listen to bluegrass, eat some delicious food, and say farewell to Katie & Walter!<br/><br/><br/>
               </span>
             </div>
           </div>

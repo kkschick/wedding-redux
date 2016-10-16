@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import RsvpForm from './RsvpForm';
 
-export default class SearchBox extends React.Component {
+export default class RsvpSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,10 +14,11 @@ export default class SearchBox extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.guestName) {
-      this.setState({
-        error: ''
-      });
       this.props.getRsvpInfo(this.state.guestName.toLowerCase());
+      this.setState({
+        error: '',
+        guestName: null
+      });
     } else {
       this.setState({
         error: 'Please enter your name!'
@@ -32,8 +33,14 @@ export default class SearchBox extends React.Component {
     });
   }
 
+  handleResetClick(e) {
+    e.preventDefault();
+    this.props.resetRsvp();
+  }
+
   render() {
     let errorBox, boxContent;
+    console.log(this.props.gotRsvp);
     if (this.state.error || this.props.errorMessage) {
       errorBox = (
         <p className="paragraph-text pink-text">
@@ -64,8 +71,18 @@ export default class SearchBox extends React.Component {
           </form>
         </div>
       );
+    } else if (this.props.sentRsvp) {
+      boxContent = (
+        <div className="paragraph-text">
+          <span>Thank you for your RSVP!</span><br/><br/>
+          <a href="" onClick={::this.handleResetClick}>
+            Want to RSVP for someone else?
+          </a>
+        </div>
+      );
     } else {
-      boxContent = <RsvpForm onSubmit={this.props.onSubmit} />;
+      boxContent = <RsvpForm guestRsvp={this.props.guestRsvp}
+                             onSubmit={this.props.onSubmit} />;
     }
 
     return (

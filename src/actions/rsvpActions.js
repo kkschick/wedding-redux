@@ -44,6 +44,12 @@ function sendRsvpFailure(error) {
   }
 }
 
+export function resetRsvpForm() {
+  return {
+    type: types.RESET_RSVP
+  }
+}
+
 export function getRsvpInfo(guestName) {
   return function(dispatch) {
     dispatch(requestRsvpInfo());
@@ -55,14 +61,10 @@ export function getRsvpInfo(guestName) {
       }
     }).then((response) => {
       if (response.ok) {
-        return response.json();
+        return response.json().then((responseJson) => dispatch(requestRsvpInfoSuccess(responseJson)));
       } else {
         dispatch(requestRsvpInfoFailure("Whoops! We couldn't get your information. Please try again."));
       }
-    }).then((responseJson) => {
-      dispatch(requestRsvpInfoSuccess(responseJson));
-    }).catch((error) => {
-      dispatch(requestRsvpInfoFailure("Whoops! We couldn't get your information. Please try again."));
     });
   };
 }
@@ -80,14 +82,10 @@ export function submitFormData(data) {
       body: JSON.stringify(data)
     }).then((response) => {
       if (response.ok) {
-        return response.json();
+        return response.json().then((responseJson) => dispatch(sendRsvpSuccess(responseJson)));
       } else {
         dispatch(sendRsvpFailure("Whoops! We couldn't update your information. Please try again."));
       }
-    }).then((responseJson) => {
-      dispatch(sendRsvpSuccess(responseJson));
-    }).catch((error) => {
-      dispatch(sendRsvpFailure("Whoops! We couldn't update your information. Please try again."));
     });
   };
 }

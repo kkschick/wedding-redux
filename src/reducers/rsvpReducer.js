@@ -5,7 +5,8 @@ import * as types from '../actions/actionTypes';
 const initialState = {
   guestRsvp: null,
   gotRsvp: false,
-  errorMessage: ''
+  errorMessage: '',
+  sentRsvp: false
 };
 
 function rsvpReducer(state = initialState, action) {
@@ -19,8 +20,26 @@ function rsvpReducer(state = initialState, action) {
     case types.GET_RSVP_INFO_FAILURE:
       return {
         ...state,
-        errorMessage: action.error
+        errorMessage: action.error,
+        gotRsvp: false
       };
+    case types.SEND_RSVP_SUCCESS:
+      return {
+        ...state,
+        sentRsvp: true
+      }
+    case types.SEND_RSVP_FAILURE:
+      return {
+        ...state,
+        errorMessage: action.error,
+        sentRsvp: false
+      }
+    case types.RESET_RSVP:
+      return {
+        ...state,
+        gotRsvp: false,
+        sentRsvp: false
+      }
     default:
       return state;
   }

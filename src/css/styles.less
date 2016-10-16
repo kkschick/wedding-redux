@@ -81,19 +81,12 @@ body {
     padding: 10px;
     input {
       font-size: 14px;
-    }
-    .input-name {
-      height: 40px;
-      width: 300px;
+      padding-left: 5px;
+      background: @light-grey;
     }
     .input-spots {
       height: 30px;
       width: 80px;
-    }
-    .textarea-field {
-      font-family: 'Didoctic', serif;
-      width: 300px;
-      height: 50px;
     }
     select  {
       font-family: 'Didoctic', serif;
@@ -110,6 +103,18 @@ body {
       border-radius: 0px;
     }
   }
+}
+
+.input-name {
+  height: 40px;
+  width: 300px;
+}
+
+.textarea-field {
+  font-family: 'Didoctic', serif;
+  background: @light-grey;
+  width: 300px;
+  height: 50px;
 }
 
 .form-container, .form-container-rsvp {
@@ -151,6 +156,7 @@ form {
   input {
     font-family: 'Didoctic', serif;
     text-transform: uppercase;
+    background: @light-grey;
   }
   textarea:focus, input[type=text]:focus, input[type=number]:focus {   
     border-color: @light-grey;
@@ -390,6 +396,9 @@ a:hover {
   .flex-grid, .gallery {
     max-width: 100%;
   }
+  .input-name, .textarea-field {
+    width: 100%;
+  }
 }
 
 @media (max-width: 800px) {
@@ -410,7 +419,7 @@ a:hover {
   .flex-grid {
     display: block;
   }
-  iframe {
+  iframe, .input-name, .textarea-field {
     width: 100%;
   }
 }
@@ -437,5 +446,8 @@ a:hover {
   }
   .form-container, .form-container-rsvp {
     width: 85%;
+  }
+  .input-name, .textarea-field {
+    width: 100%;
   }
 }
