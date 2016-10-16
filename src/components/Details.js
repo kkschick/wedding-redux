@@ -44,6 +44,28 @@ export default class Details extends React.Component {
                 Saturday, April 29th<br/>
               </span>
               <span className="paragraph-text">
+                <strong>Welcome Picnic in Boston Common<br/>
+                10am-11am (Katie)<br/>
+                11am-1pm (Walter)<br/><br/></strong>
+                <em>Hang out with the bride and groom in the park (weather permitting)!<br/>
+                They will be there in shifts, to avoid seeing the other before the ceremony.<br/><br/>
+
+                Meet us at the &nbsp;
+                <a href="https://www.google.com/maps/place/Charles+Sumner+Statue/@42.3524105,-71.0720215,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a75b1d5a079:0xfcb1bb93b9320857!8m2!3d42.3524105!4d-71.0698328" target="_blank">
+                  Charles Sumner Statue
+                </a>&nbsp; and bring your favorite snacks and lawn games.<br/><br/><br/></em>
+              </span>
+            </div>
+          </div>
+          <div className="col">
+            <div className="col-box left-box">
+              <h1 className="header-large">
+                THE WEDDING
+              </h1>
+              <span className="header-medium">
+                Saturday, April 29th<br/>
+              </span>
+              <span className="paragraph-text">
                 <strong>The Boston Public Library<br/>
                 230 Dartmouth Street<br/><br/></strong>
                 <em>Ceremony at 7pm<br/>
