@@ -11,17 +11,13 @@ export default class SearchBox extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.getAllRsvpInfo();
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.guestName) {
       this.setState({
         error: ''
       });
-      this.props.getRsvpInfo(this.state.guestName);
+      this.props.getRsvpInfo(this.state.guestName.toLowerCase());
     } else {
       this.setState({
         error: 'Please enter your name!'
@@ -37,7 +33,6 @@ export default class SearchBox extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let errorBox, boxContent;
     if (this.state.error || this.props.errorMessage) {
       errorBox = (
@@ -66,19 +61,15 @@ export default class SearchBox extends React.Component {
               <br/><br/>
               <button type="submit">Submit</button>
               {errorBox}
-              <br/>
           </form>
         </div>
       );
     } else {
-      boxContent = (
-        <RsvpForm currentGuest={this.props.currentGuest}
-                  guestRsvp={this.props.guestRsvp} />
-      );
+      boxContent = <RsvpForm onSubmit={this.props.onSubmit} />;
     }
 
     return (
-      <div className="form-container">
+      <div className="form-container-rsvp">
         <div className="form-inner">
           {boxContent}
         </div>

@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
-import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import { reducer as formReducer } from 'redux-form'
 import thunk from 'redux-thunk';
 
 import routes from './routes';
@@ -13,9 +14,13 @@ import rsvpReducer from './reducers/rsvpReducer';
 require('./css/styles.less');
 require('./css/image-gallery.less');
 
-let createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const createStoreWithMiddleware = compose(
+  applyMiddleware(thunk),
+  window.devToolsExtension ? window.devToolsExtension() : identity
+)(createStore);
 
 const RootReducer = combineReducers({
+  form: formReducer,
   rsvpReducer: rsvpReducer,
   routing: routerReducer
 });

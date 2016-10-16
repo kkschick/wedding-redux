@@ -1,55 +1,93 @@
-import * as types from './actionTypes';
-import { KEY } from './config';
+import fetch from 'isomorphic-fetch';
 
-export function getAllRsvpInfo() {
+import * as types from './actionTypes';
+import { KEY, SECRET } from '../config';
+
+const BASE_API_URL = 'https://sheetsu.com/apis/v1.0/cd490b287c3c';
+
+function requestRsvpInfo() {
+  return {
+    type: types.GET_RSVP_INFO_REQUEST
+  }
+}
+
+function requestRsvpInfoSuccess(data) {
+  return {
+    type: types.GET_RSVP_INFO_SUCCESS,
+    data
+  }
+}
+
+function requestRsvpInfoFailure(error) {
+  return {
+    type: types.GET_RSVP_INFO_FAILURE,
+    error
+  }
+}
+
+function sendRsvp() {
+  return {
+    type: types.SEND_RSVP_REQUEST
+  }
+}
+
+function sendRsvpSuccess() {
+  return {
+    type: types.SEND_RSVP_SUCCESS
+  }
+}
+
+function sendRsvpFailure(error) {
+  return {
+    type: types.SEND_RSVP_FAILURE,
+    error
+  }
+}
+
+export function getRsvpInfo(guestName) {
   return function(dispatch) {
-    dispatch({type: types.GET_ALL_RSVPS_REQUEST});
-    fetch(`https://sheets.googleapis.com/v4/spreadsheets/1mGvfiRothM5fxjSWmzNIveuIkmJ6r-jYqK23Su6hi1I/values/A1:K300?key=${KEY}&majorDimension=COLUMNS`, {
+    dispatch(requestRsvpInfo());
+    fetch(`${BASE_API_URL}/search?name=${guestName}`, {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa(KEY + ':' + SECRET)
       }
     }).then((response) => {
       if (response.ok) {
         return response.json();
       } else {
-        dispatch({type: types.GET_ALL_RSVPS_FAILURE, error: "Whoops! We couldn't get your information. Please try again."});
+        dispatch(requestRsvpInfoFailure("Whoops! We couldn't get your information. Please try again."));
       }
     }).then((responseJson) => {
-      dispatch({type: types.GET_ALL_RSVPS_SUCCESS, data: responseJson});
+      dispatch(requestRsvpInfoSuccess(responseJson));
     }).catch((error) => {
-      dispatch({type: types.GET_ALL_RSVPS_FAILURE, error: "Whoops! We couldn't get your information. Please try again."});
+      dispatch(requestRsvpInfoFailure("Whoops! We couldn't get your information. Please try again."));
     });
   };
 }
 
-export function getRsvpInfo(guestName) {
-  return {
-    type: types.GET_RSVP_INFO,
-    data: {
-      guestName: guestName
-    }
+export function submitFormData(data) {
+  data.name = data.name.toLowerCase();
+  return function(dispatch) {
+    dispatch(sendRsvp());
+    return fetch(`${BASE_API_URL}/name/${data.name}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa(KEY + ':' + SECRET)
+      },
+      body: JSON.stringify(data)
+    }).then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        dispatch(sendRsvpFailure("Whoops! We couldn't update your information. Please try again."));
+      }
+    }).then((responseJson) => {
+      dispatch(sendRsvpSuccess(responseJson));
+    }).catch((error) => {
+      dispatch(sendRsvpFailure("Whoops! We couldn't update your information. Please try again."));
+    });
   };
 }
-
-// export function getRsvpInfo(guestId) {
-//   return function(dispatch) {
-//     dispatch({type: types.GET_RSVP_REQUEST});
-//     fetch(`/api/guest/${guestId}`, {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     }).then((response) => {
-//       if (response.ok) {
-//         return response.json();
-//       } else {
-//         dispatch({type: types.GET_RSVP_FAILURE, error: 'Failed to retrieve RSVP information. Please try again.'});
-//       }
-//     }).then((responseJson) => {
-//       dispatch({type: types.GET_RSVP_SUCCESS, data: responseJson});
-//     }).catch((error) => {
-//       dispatch({type: types.GET_RSVP_FAILURE, error: 'Failed to retrieve RSVP information. Please try again.'});
-//     });
-//   };
-// }

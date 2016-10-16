@@ -1,6 +1,8 @@
+import { PW } from './config';
+
 module.exports = {
   login(password) {
-    if (password === 'maggie') {
+    if (password === PW) {
       let tokenObj = {
         key: Math.random().toString(36).substring(7),
         timestamp: new Date().getTime()

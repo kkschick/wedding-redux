@@ -1,140 +1,113 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
 
-import _ from 'lodash';
+import { submitFormData } from '../actions/rsvpActions';
 
-export default class RsvpForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isComing: true
-    };
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    console.log(this.state);
-    // if (this.state.firstName && this.state.lastName) {
-    //   this.setState({
-    //     error: ''
-    //   });
-    //   this.props.getGuestsByName(this.state.firstName, this.state.lastName);
-    // } else {
-    //   this.setState({
-    //     error: 'Please enter both a first and last name!'
-    //   });
-    // }
-  }
-
-  handleIsComing(e) {
-    console.log(this.state);
-    e.preventDefault();
-    this.setState({
-      isComing: !isComing
-    });
-  }
-
-  handleFormChange(e) {
-    e.preventDefault();
-  }
-
+class RsvpForm extends React.Component {
   render() {
-    let currentGuest = this.props.currentGuest,
-        guestRsvp = this.props.guestRsvp,
-        rsvpHeader = (
-          <h1 className="header-medium">
-            RSVP for {currentGuest}
-          </h1>
-        );
-
-    console.log(currentGuest, guestRsvp);
-    let rsvpForm = (
-      <div>
-        <form className="form-element" onSubmit={::this.handleSubmit}>
-          <fieldset>
-            <label>Full name: </label>
-            <input name="name" 
-                   value={currentGuest.name}
-                   className="form-element" />
-          </fieldset>
-          <fieldset>
-            <div className="paragraph-text">
-              Will you be able to attend the wedding?
-            </div>
-            <label>Yes</label>
-            <input type="radio"
-                   name="isComingWedding"
-                   defaultChecked={true}
-                   value={true} />
-            <label>No</label>
-            <input type="radio"
-                   name="isComingWedding"
-                   value={false} />
-          </fieldset>
-          <fieldset>
-            <label>Please select a meal:</label>
-            <select name="mealPreference">
-              <option value="chicken">Chicken</option>
-              <option value="fish">Fish</option>
-              <option value="vegetarian">Vegetarian</option>
-            </select>
-          </fieldset>
-          <fieldset>
-            <label>Any dietary restrictions we should know about?</label>
-            <input name="dietaryRestrictions" 
-                   value={currentGuest.dietaryRestrictions}
-                   className="form-element" /><br/>
-          </fieldset>
-          <fieldset>
-            <div className="paragraph-text">
-              Will you need parking?
-            </div>
-            <label>Yes</label>
-            <input type="radio"
-                   name="needsParking"
-                   id="accept"
-                   defaultChecked={true}
-                   value={this.state.isComing} />
-            <label>No</label>
-            <input type="radio"
-                   name="needsParking"
-                   id="decline"
-                   value={this.state.isComing} />
-          </fieldset>
-          <fieldset>
-            <label>How many parking vouchers will you need?</label>
-            <input name="numParkingSpots" 
-                   value={currentGuest.dietaryRestrictions}
-                   className="form-element" /><br/>
-          </fieldset>
-          <fieldset>
-            <div className="paragraph-text">
-              Which of these other events will you be able to attend?
-            </div>
-            <label>Friday Welcome Party (4/28, 9:30-12am): </label>
-            <input type="checkbox"
-                   name="isComingFri"
-                   defaultChecked={true}
-                   value={true} /><br/>
-            <label>Saturday Picnic (4/29, 10am-1pm): </label>
-            <input type="checkbox"
-                   name="isComingPicnic"
-                   value={false} /><br/>
-            <label>Sunday Brunch (4/30, 10am-1pm): </label>
-            <input type="checkbox"
-                   name="isComingBrunch"
-                   value={false} /><br/>
-          </fieldset>
-          <button type="submit">Submit</button>
-          <br/>
-        </form>
-      </div>
-    );
+    const { handleSubmit } = this.props;
     return (
-      <div>
-        {rsvpHeader}<br/><br/>
-        {rsvpForm}
-      </div>
+      <form className="form-element paragraph-text" onSubmit={handleSubmit}>
+        <div>
+          <label>Name: </label>
+          <div className="form-field">
+            <Field name="name" component="input" type="text" placeholder="Full name" className="input-name" />
+          </div>
+        </div>
+        <hr />
+        <div>
+          <label>Will you be able to attend the wedding?</label>
+          <div className="form-field">
+            <label>
+              <Field name="isComingWedding" component="input" type="radio" value="TRUE"/>
+                &nbsp;Yes&nbsp;&nbsp;
+            </label>
+            <label>
+              <Field name="isComingWedding" component="input" type="radio" value="FALSE"/>
+                &nbsp;No
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <label>Please select a meal:</label>
+          <div className="form-field">
+            <Field name="mealPreference" component="select">
+              <option value="chicken" key="chicken">Chicken</option>
+              <option value="fish" key="fish">Fish</option>
+              <option value="vegetarian" key="vegetarian">Vegetarian</option>
+            </Field>
+          </div>
+        </div>
+        <div>
+          <label className="small-text">Any dietary restrictions we should know about?</label><br/>
+          <div className="form-field">
+            <Field name="dietaryRestrictions" component="textarea" type="text" className="textarea-field" />
+          </div>
+        </div>
+        <hr />
+        <div>
+          <label>Will you need parking?</label>
+          <div className="form-field">
+            <label>
+              <Field name="needsParking" component="input" type="radio" value="TRUE"/>
+                &nbsp;Yes&nbsp;&nbsp;
+            </label>
+            <label>
+              <Field name="needsParking" component="input" type="radio" value="FALSE"/>
+                &nbsp;No
+            </label>
+          </div>
+        </div>
+        <div>
+          <label>How many parking vouchers* will you need?</label>
+          <div className="form-field">
+            <Field name="numParkingSpots" component="input" type="number" placeholder="# spots" className="input-spots" />
+          </div><br/>
+          <span className="smaller-text">* With a voucher, you can park for $7/car at the Back Bay Garage.</span><br/>
+        </div>
+        <hr />
+        <div>
+          <label>Which of these other events will you be able to attend?</label><br/>
+          <label htmlFor="isComingFri">Friday Welcome Party (4/28, 9:30pm-12am):</label>
+          <div className="form-field">
+            <Field name="isComingFri" id="isComingFri" component="input" type="checkbox"/>
+          </div>
+        </div>
+        <div>
+          <label htmlFor="isComingPicnic">Saturday Picnic (4/29, 10am-1pm):</label>
+          <div className="form-field">
+            <Field name="isComingPicnic" id="isComingPicnic" component="input" type="checkbox"/>
+          </div>
+        </div>
+        <div>
+          <label htmlFor="isComingBrunch">Sunday Brunch (4/30, 10am-1pm):</label>
+          <div className="form-field">
+            <Field name="isComingBrunch" id="isComingBrunch" component="input" type="checkbox"/>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <label>Anything else you want to tell us?</label><br/>
+          <div className="form-field">
+            <Field name="comments" component="textarea" type="text" className="textarea-field" />
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     );
   }
 }
+
+RsvpForm = reduxForm({
+  form: 'rsvpForm'
+})(RsvpForm);
+
+RsvpForm = connect(
+  state => ({
+    initialValues: state.rsvpReducer.guestRsvp
+  })
+)(RsvpForm);
+
+export default RsvpForm;

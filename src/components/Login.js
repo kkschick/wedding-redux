@@ -54,6 +54,7 @@ export default class Login extends React.Component {
           </div>
           <form className="form-element" onSubmit={::this.handleSubmit}>
             <input value={this.state.password}
+                   type="text"
                    placeholder="Enter password"
                    className="form-element"
                    onChange={::this.handlePassword} />
