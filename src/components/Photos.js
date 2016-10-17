@@ -107,12 +107,12 @@ export default class Photos extends React.Component {
         }
       },
       {
-        src: './img/old4.jpg',
+        src: './img/old4.JPG',
         width: 1306,
         height: 979,
         aspectRatio: 1.33,
         lightboxImage:{
-          src: './img/old4.jpg'
+          src: './img/old4.JPG'
         }
       },
       {
@@ -134,12 +134,12 @@ export default class Photos extends React.Component {
         }
       },
       {
-        src: './img/old15.jpg',
+        src: './img/old15.JPG',
         width: 612,
         height: 612,
         aspectRatio: 1,
         lightboxImage:{
-          src: './img/old15.jpg'
+          src: './img/old15.JPG'
         }
       },
       {
@@ -152,12 +152,12 @@ export default class Photos extends React.Component {
         }
       },
       {
-        src: './img/old6.jpg',
+        src: './img/old6.JPG',
         width: 840,
         height: 1120,
         aspectRatio: .75,
         lightboxImage:{
-          src: './img/old6.jpg'
+          src: './img/old6.JPG'
         }
       },
       {
@@ -179,21 +179,21 @@ export default class Photos extends React.Component {
         }
       },
       {
-        src: './img/old13.jpg',
+        src: './img/old13.JPG',
         width: 904,
         height: 678,
         aspectRatio: 1.33,
         lightboxImage:{
-          src: './img/old13.jpg'
+          src: './img/old13.JPG'
         }
       },
       {
-        src: './img/old11.jpg',
+        src: './img/old11.JPG',
         width: 1015,
         height: 761,
         aspectRatio: 1.33,
         lightboxImage:{
-          src: './img/old11.jpg'
+          src: './img/old11.JPG'
         }
       },
       {
@@ -215,12 +215,12 @@ export default class Photos extends React.Component {
         }
       },
       {
-        src: './img/old12.jpg',
+        src: './img/old12.JPG',
         width: 1288,
         height: 966,
         aspectRatio: 1.33,
         lightboxImage:{
-          src: './img/old12.jpg'
+          src: './img/old12.JPG'
         }
       }
     ];
