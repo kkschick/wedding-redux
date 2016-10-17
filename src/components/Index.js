@@ -4,7 +4,7 @@ export default class Index extends React.Component {
   render() {
     return (
       <div className="outer-wrapper">
-        <img src="./img/4.png" className="front-image"/><br/>
+        <img src="./img/4.jpeg" className="front-image"/><br/>
         <div className="header-large">
           Saturday, April 29, 2017
         </div>

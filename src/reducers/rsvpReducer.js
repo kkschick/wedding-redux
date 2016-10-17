@@ -16,11 +16,13 @@ function rsvpReducer(state = initialState, action) {
     case types.SEND_RSVP_REQUEST:
       return {
         ...state,
+        errorMessage: '',
         isLoading: true
       }
     case types.GET_RSVP_INFO_SUCCESS:
       return {
         ...state,
+        errorMessage: '',
         guestRsvp: _.first(action.data),
         gotRsvp: true,
         isLoading: false
@@ -35,6 +37,7 @@ function rsvpReducer(state = initialState, action) {
     case types.SEND_RSVP_SUCCESS:
       return {
         ...state,
+        errorMessage: '',
         isLoading: false,
         sentRsvp: true
       }
@@ -48,6 +51,7 @@ function rsvpReducer(state = initialState, action) {
     case types.RESET_RSVP:
       return {
         ...state,
+        errorMessage: '',
         gotRsvp: false,
         sentRsvp: false
       }

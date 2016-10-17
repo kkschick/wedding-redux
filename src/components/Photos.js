@@ -5,93 +5,93 @@ export default class Photos extends React.Component {
   render() {
     const fancyPics = [
       {
-        src: './img/1.png',
-        width: 3068,
-        height: 4609,
+        src: './img/1.jpeg',
+        width: 767,
+        height: 1153,
         aspectRatio: .66,
         lightboxImage:{
-          src: './img/1.png'
+          src: './img/1.jpeg'
         }
       },
       {
-        src: './img/8.png',
-        width: 4884,
-        height: 3251,
+        src: './img/8.jpeg',
+        width: 1221,
+        height: 813,
         aspectRatio: 1.5,
         lightboxImage:{
-          src: './img/8.png'
+          src: './img/8.jpeg'
         }
       },
       {
-        src: './img/13.png',
-        width: 4802,
-        height: 3196,
+        src: './img/13.jpeg',
+        width: 1203,
+        height: 799,
         aspectRatio: 1.5,
         lightboxImage:{
-          src: './img/13.png'
+          src: './img/13.jpeg'
         }
       },
       {
-        src: './img/2.png',
-        width: 3280,
-        height: 4928,
+        src: './img/2.jpeg',
+        width: 820,
+        height: 1232,
         aspectRatio: .66,
         lightboxImage:{
-          src: './img/2.png'
+          src: './img/2.jpeg'
         }
       },
       {
-        src: './img/15.png',
-        width: 3280,
-        height: 4928,
+        src: './img/15.jpeg',
+        width: 820,
+        height: 1232,
         aspectRatio: .66,
         lightboxImage:{
-          src: './img/15.png'
+          src: './img/15.jpeg'
         }
       },
       {
-        src: './img/9.png',
-        width: 4797,
-        height: 3193,
+        src: './img/9.jpeg',
+        width: 1199,
+        height: 798,
         aspectRatio: 1.5,
         lightboxImage:{
-          src: './img/9.png'
+          src: './img/9.jpeg'
         }
       },
       {
-        src: './img/6.png',
-        width: 4747,
-        height: 3160,
+        src: './img/6.jpeg',
+        width: 1187,
+        height: 790,
         aspectRatio: 1.5,
         lightboxImage:{
-          src: './img/6.png'
+          src: './img/6.jpeg'
         }
       },
       {
-        src: './img/14.png',
-        width: 2990,
-        height: 4492,
+        src: './img/14.jpeg',
+        width: 748,
+        height: 1123,
         aspectRatio: .66,
         lightboxImage:{
-          src: './img/14.png'
+          src: './img/14.jpeg'
         }
       },
       {
-        src: './img/12.png',
-        width: 3280,
-        height: 4928,
+        src: './img/12.jpeg',
+        width: 820,
+        height: 1232,
         aspectRatio: .66,
         lightboxImage:{
-          src: './img/12.png'
+          src: './img/12.jpeg'
         }
       },
       {
-        src: './img/11.png',
-        width: 4928,
-        height: 3280,
+        src: './img/11.jpeg',
+        width: 1232,
+        height: 820,
         aspectRatio: 1.5,
         lightboxImage:{
-          src: './img/11.png'
+          src: './img/11.jpeg'
         }
       }
     ];
@@ -99,8 +99,8 @@ export default class Photos extends React.Component {
     const historicalPics = [
       {
         src: './img/old1.jpg',
-        width: 1880,
-        height: 2816,
+        width: 752,
+        height: 1126,
         aspectRatio: .66,
         lightboxImage:{
           src: './img/old1.jpg'
@@ -108,8 +108,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old4.jpg',
-        width: 3264,
-        height: 2448,
+        width: 1306,
+        height: 979,
         aspectRatio: 1.33,
         lightboxImage:{
           src: './img/old4.jpg'
@@ -117,8 +117,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old9.jpg',
-        width: 2448,
-        height: 3264,
+        width: 979,
+        height: 1306,
         aspectRatio: .75,
         lightboxImage:{
           src: './img/old9.jpg'
@@ -126,8 +126,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old3.jpg',
-        width: 1536,
-        height: 2048,
+        width: 768,
+        height: 1024,
         aspectRatio: .75,
         lightboxImage:{
           src: './img/old3.jpg'
@@ -144,8 +144,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old5.jpg',
-        width: 1536,
-        height: 2048,
+        width: 768,
+        height: 1024,
         aspectRatio: .75,
         lightboxImage:{
           src: './img/old5.jpg'
@@ -153,8 +153,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old6.jpg',
-        width: 1200,
-        height: 1600,
+        width: 840,
+        height: 1120,
         aspectRatio: .75,
         lightboxImage:{
           src: './img/old6.jpg'
@@ -162,8 +162,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old14.jpg',
-        width: 1536,
-        height: 2048,
+        width: 768,
+        height: 1024,
         aspectRatio: .75,
         lightboxImage:{
           src: './img/old14.jpg'
@@ -171,8 +171,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old7.jpg',
-        width: 2448,
-        height: 3264,
+        width: 979,
+        height: 1306,
         aspectRatio: .75,
         lightboxImage:{
           src: './img/old7.jpg'
@@ -180,8 +180,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old13.jpg',
-        width: 1808,
-        height: 1356,
+        width: 904,
+        height: 678,
         aspectRatio: 1.33,
         lightboxImage:{
           src: './img/old13.jpg'
@@ -189,8 +189,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old11.jpg',
-        width: 1691,
-        height: 1268,
+        width: 1015,
+        height: 761,
         aspectRatio: 1.33,
         lightboxImage:{
           src: './img/old11.jpg'
@@ -207,8 +207,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old2.jpg',
-        width: 1200,
-        height: 1600,
+        width: 840,
+        height: 1120,
         aspectRatio: .75,
         lightboxImage:{
           src: './img/old2.jpg'
@@ -216,8 +216,8 @@ export default class Photos extends React.Component {
       },
       {
         src: './img/old12.jpg',
-        width: 2576,
-        height: 1932,
+        width: 1288,
+        height: 966,
         aspectRatio: 1.33,
         lightboxImage:{
           src: './img/old12.jpg'
