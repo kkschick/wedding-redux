@@ -17,7 +17,6 @@ require('./css/react-spinner.less');
 
 const createStoreWithMiddleware = compose(
   applyMiddleware(thunk),
-  window.devToolsExtension ? window.devToolsExtension() : identity
 )(createStore);
 
 const RootReducer = combineReducers({
