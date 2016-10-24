@@ -59,7 +59,7 @@ export default class RsvpSearch extends React.Component {
               Let's find your RSVP!
             </h1><br/>
           <div className="paragraph-text">
-            Enter your first and last names as they appear on your invitation:
+            Please enter your first and last names:
           </div>
           <form className="form-element" onSubmit={::this.handleSubmit}>
               <input value={this.state.guestName}

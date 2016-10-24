@@ -61,7 +61,7 @@ export default class Details extends React.Component {
                 Sunday, April 30th<br/>
               </span>
               <span className="paragraph-text">
-                10am-1pm at the Lenox Hotel,<br/>
+                9:30am-12:30pm at the Lenox Hotel,<br/>
                 Dome Room<br/><br/>
 
                 Esther Pearson, the groom's grandmother, is hosting a Sunday brunch in the newlyweds' honor.<br/><br/>
