@@ -6,11 +6,11 @@ export default class Accommodations extends React.Component {
       <div className="outer-wrapper">
         <div className="paragraph-text">
           <span>
-            We have hotel blocks at four hotels around the Boston Public Library,<br/>
-            all of which are within walking distance of the library (see map below!).<br/><br/>
+            We have hotel blocks at four hotels near the Boston Public Library,<br/>
+            all of which are within walking distance (see map below!).<br/><br/>
           </span>
           <span className="small-text">
-            However, we realize that Boston hotels are expensive.<br/>
+            N.B. We realize that Boston hotels are expensive.<br/>
             If you're looking for a cheaper option, we recommend checking out&nbsp;
             <a href="http://www.airbnb.com/c/kschick" target="_blank">
               Airbnb
@@ -46,7 +46,7 @@ export default class Accommodations extends React.Component {
               <td>The Westin Copley Place</td>
               <td>$299/night</td>
               <td>Phone: Call the hotel at 1-888-627-7054 and mention
-                  the Schick & Klyce Wedding block.
+                  the Schick/Klyce Wedding block.
               </td>
               <td>—</td>
             </tr>
@@ -71,7 +71,7 @@ export default class Accommodations extends React.Component {
                 </a>&nbsp;
                 and type in the block code SCHKLYWED.<br/><br/>
                 Phone: Call the hotel at 617-262-1000 or 1-800-343-1177 and
-                mention the Schick Klyce Wedding block.
+                mention the Schick/Klyce Wedding block.
               </td>
               <td>Parking is available for $29/night.</td>
             </tr>

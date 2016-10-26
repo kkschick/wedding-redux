@@ -59,7 +59,10 @@ export default class RsvpSearch extends React.Component {
               Let's find your RSVP!
             </h1><br/>
           <div className="paragraph-text">
-            Please enter your first and last names:
+            Please enter your first and last names:<br/>
+            <span className="smaller-text">
+              (If you're not sure which name to use, go with the name we know you best by.)
+            </span>
           </div>
           <form className="form-element" onSubmit={::this.handleSubmit}>
               <input value={this.state.guestName}
@@ -71,6 +74,9 @@ export default class RsvpSearch extends React.Component {
               { this.props.isLoading && <Spinner /> }
               {errorBox}
           </form>
+          <div className="paragraph-text small-text">
+            (Be sure to RSVP individually for everyone in your party.)
+          </div>
         </div>
       );
     } else if (this.props.sentRsvp) {

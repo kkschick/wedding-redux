@@ -25,10 +25,10 @@ export default class Details extends React.Component {
                 <strong>Welcome Picnic in Boston Common<br/>
                 10am-11am (Katie)<br/>
                 11:15am-1pm (Walter)<br/><br/></strong>
-                <em>Hang out with the bride and groom in the park (weather permitting)!<br/>
+                Hang out with the bride and groom in the park (weather permitting)!<br/>
                 They will be there in shifts, to avoid seeing each other before the ceremony.<br/><br/>
 
-                Meet us at the &nbsp;
+                <em>Meet us at the &nbsp;
                 <a href="https://www.google.com/maps/place/Charles+Sumner+Statue/@42.3524105,-71.0720215,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a75b1d5a079:0xfcb1bb93b9320857!8m2!3d42.3524105!4d-71.0698328" target="_blank">
                   Charles Sumner Statue
                 </a>,&nbsp; and bring your favorite snacks and lawn games.<br/><br/><br/></em>
@@ -46,8 +46,10 @@ export default class Details extends React.Component {
               <span className="paragraph-text">
                 <strong>The Boston Public Library<br/>
                 230 Dartmouth Street<br/><br/></strong>
-                <em>Ceremony at 7pm<br/>
-                Cocktails & reception to follow<br/><br/></em>
+
+                Ceremony at 7pm.<br/>
+                Cocktails & reception to follow.<br/><br/>
+                <em>Formal attire requested.<br/><br/></em>
               </span>
               <img src="./img/bpl-exterior.jpg" className="basic-img"/><br/><br/><br/>
             </div>
@@ -61,11 +63,11 @@ export default class Details extends React.Component {
                 Sunday, April 30th<br/>
               </span>
               <span className="paragraph-text">
-                9:30am-12:30pm at the Lenox Hotel,<br/>
-                Dome Room<br/><br/>
+                <strong>The Lenox Hotel, Dome Room<br/>
+                9:30am-12:30pm<br/><br/></strong>
 
                 Esther Pearson, the groom's grandmother, is hosting a Sunday brunch in the newlyweds' honor.<br/><br/>
-                Come listen to bluegrass, eat some delicious food, and say farewell to Katie & Walter!<br/><br/><br/>
+                <em>Come listen to bluegrass, eat some delicious food, and say farewell to Katie & Walter!<br/><br/><br/></em>
               </span>
             </div>
           </div>

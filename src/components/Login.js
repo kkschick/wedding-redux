@@ -49,8 +49,8 @@ export default class Login extends React.Component {
         <div className="form-inner">
           <div className="form-element header-large">Welcome!</div>
           <div className="form-element paragraph-text">
-            To access the site, please enter<br/>
-            the name of Katie & Walter's cat:
+            To access the site, please enter the name<br/>
+            of the city where Katie & Walter met:
           </div>
           <form className="form-element" onSubmit={::this.handleSubmit}>
             <input value={this.state.password}

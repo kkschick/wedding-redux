@@ -36,8 +36,8 @@ class RsvpForm extends React.Component {
           <label>Please select a meal:</label>
           <div className="form-field">
             <Field name="mealPreference" component="select">
-              <option value="chicken" key="chicken">Chicken</option>
-              <option value="fish" key="fish">Fish</option>
+              <option value="chicken" key="chicken">Thyme-Roasted Statler Chicken</option>
+              <option value="fish" key="fish">Miso-Roasted Salmon</option>
               <option value="vegetarian" key="vegetarian">Vegetarian</option>
             </Field>
           </div>
