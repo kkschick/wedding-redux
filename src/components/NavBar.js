@@ -29,7 +29,7 @@ export default class NavBar extends React.Component {
         <div className="header">
           <Link to="/" className="no-link-formatting no-header-formatting">
             <h1 className="header-text">&nbsp;&nbsp;&nbsp;Katie</h1>
-            <img src="./img/logo.png" className="header-image" />
+            <img src="https://res.cloudinary.com/hnswgapni/image/upload/c_scale,w_200/v1477838774/logo_jthb3s.png" className="header-image" />
             <h1 className="header-text">Walter</h1>
           </Link>
         </div>

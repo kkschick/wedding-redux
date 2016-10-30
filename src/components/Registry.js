@@ -11,7 +11,7 @@ export default class Registry extends React.Component {
         </div>
         <a href="https://www.zola.com/registry/katieandwalter"
            target="_blank">
-          <img src="./img/zola-logo.png"
+          <img src="https://res.cloudinary.com/hnswgapni/image/upload/c_scale,w_500/v1477838783/zola-logo_gzh20z.png"
                className="zola-image" />
         </a>
       </div>

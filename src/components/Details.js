@@ -51,7 +51,7 @@ export default class Details extends React.Component {
                 Cocktails & reception to follow.<br/><br/>
                 <em>Formal attire requested.<br/><br/></em>
               </span>
-              <img src="./img/bpl-exterior.jpg" className="basic-img"/><br/><br/><br/>
+              <img src="https://res.cloudinary.com/hnswgapni/image/upload/c_scale,w_300/v1477838773/bpl-exterior_zqwplq.jpg" className="basic-img"/><br/><br/><br/>
             </div>
           </div>
           <div className="col">
@@ -72,7 +72,7 @@ export default class Details extends React.Component {
             </div>
           </div>
         </div>
-        <img src="./img/masthead.png" className="centered-masthead" />
+        <img src="https://res.cloudinary.com/hnswgapni/image/upload/c_scale,w_1000/v1477838775/masthead_pe8tfq.png" className="centered-masthead" />
       </div>
     );
   }
