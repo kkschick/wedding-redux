@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import * as types from '../actions/actionTypes';
 
 const initialState = {
@@ -23,7 +21,7 @@ function rsvpReducer(state = initialState, action) {
       return {
         ...state,
         errorMessage: '',
-        guestRsvp: _.first(action.data),
+        guestRsvp: action.data[0],
         gotRsvp: true,
         isLoading: false
       }
