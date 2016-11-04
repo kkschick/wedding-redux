@@ -13,8 +13,8 @@ export default class Directions extends React.Component {
               <div className="paragraph-text">
                 If you're driving, we recommend using Google Maps for directions.<br/><br/>
                 Parking is available in the Back Bay Garage (
-                  <a href="https://www.google.com/maps/place/Back+Bay+Garage/@42.3506216,-71.0754343,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a0b5a813773:0xce1fbe9cc3a03e83!8m2!3d42.3506216!4d-71.0732456" target="_blank">
-                    222 Berkeley Street
+                  <a href="https://www.google.com/maps/place/199+Clarendon+St,+Boston,+MA+02116/@42.3501805,-71.07692,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a0ca1394d57:0x4129d7b0c5202d2a!8m2!3d42.3501805!4d-71.0747313" target="_blank">
+                    199 Clarendon Street
                   </a>)
                 and is $7 for the night with validation.<br/><br/>
                 <span className="small-text">
