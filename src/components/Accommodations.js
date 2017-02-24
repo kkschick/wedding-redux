@@ -8,19 +8,22 @@ export default class Accommodations extends React.Component {
           <span>
             We have hotel blocks at four hotels near the Boston Public Library,<br/>
             all of which are within walking distance (see map below!).<br/><br/>
-            It looks like some of the room blocks are filling up.<br/>
-            If you are unable to book the room you want,<br/>
-            please let us know! We can always add more rooms.<br/><br/>
           </span>
           <span className="small-text">
             N.B. We realize that Boston hotels are expensive.<br/>
-            If you're looking for a cheaper option, we recommend checking out&nbsp;
+            If you're looking for a cheaper option, we recommend<br/>
+            checking out&nbsp;
             <a href="http://www.airbnb.com/c/kschick" target="_blank">
               Airbnb
-            </a>.<br/>
-            (Use <a href="http://www.airbnb.com/c/kschick" target="_blank">
+            </a>.
+            Use <a href="http://www.airbnb.com/c/kschick" target="_blank">
               this link
-            </a> for $30 off!)
+            </a> for $30 off!<br/><br/>
+          </span>
+          <span className="small-text">
+            (Update: It looks like some of the room blocks are filling up.<br/>
+            If you are unable to book the room you want,<br/>
+            please let us know! We can always add more rooms.)<br/><br/>
           </span>
         </div>
         <table className="paragraph-text">
