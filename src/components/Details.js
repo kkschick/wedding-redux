@@ -14,9 +14,10 @@ export default class Details extends React.Component {
                 Friday, April 28th<br/>
               </span>
               <span className="paragraph-text">
-                <strong>Welcome Party @ TBD<br/>
+                <strong>Welcome Party @ Storyville<br/>
+                90 Exeter Street<br/>
                 9:30pm-midnight<br/><br/></strong>
-                <em>Come join us for some informal live music and drinks!</em><br/><br/>
+                <em>Come hear the Klyce Family Band play and join us for some informal drinks, dancing, and conversation!</em><br/><br/>
               </span>
               <span className="header-medium">
                 Saturday, April 29th<br/>
@@ -49,7 +50,8 @@ export default class Details extends React.Component {
 
                 Ceremony at 7pm.<br/>
                 Cocktails & reception to follow.<br/><br/>
-                <em>Formal attire requested.<br/><br/></em>
+                <em>Formal attire requested, but black tie is not necessary. Wear what you feel comfortable in!
+                The ceremony and cocktail hour will be outdoors (weather permitting), so you may want to bring a light layer.<br/><br/></em>
               </span>
               <img src="https://res.cloudinary.com/hnswgapni/image/upload/c_scale,w_300/v1477838773/bpl-exterior_zqwplq.jpg" className="basic-img"/><br/><br/><br/>
             </div>
