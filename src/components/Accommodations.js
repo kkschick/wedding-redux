@@ -8,6 +8,9 @@ export default class Accommodations extends React.Component {
           <span>
             We have hotel blocks at four hotels near the Boston Public Library,<br/>
             all of which are within walking distance (see map below!).<br/><br/>
+            It looks like some of the room blocks are filling up.<br/>
+            If you are unable to book the room you want,<br/>
+            please let us know! We can always add more rooms.<br/><br/>
           </span>
           <span className="small-text">
             N.B. We realize that Boston hotels are expensive.<br/>
