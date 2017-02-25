@@ -16,7 +16,7 @@ export default class Details extends React.Component {
               <span className="paragraph-text">
                 <strong>Welcome Party @ Storyville<br/>
                 90 Exeter Street<br/>
-                9:30pm-midnight<br/><br/></strong>
+                9pm-midnight<br/><br/></strong>
                 <em>Come hear the Klyce Family Band play and join us for some informal drinks, dancing, and conversation!</em><br/><br/>
               </span>
               <span className="header-medium">
