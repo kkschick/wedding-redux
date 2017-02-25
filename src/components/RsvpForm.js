@@ -72,7 +72,7 @@ class RsvpForm extends React.Component {
         <hr />
         <div>
           <div className="paragraph-text">Which of these other events will you be able to attend?</div>
-          <label htmlFor="isComingFri">Friday Welcome Party (4/28, 9:30pm-12am):</label>
+          <label htmlFor="isComingFri">Friday Welcome Party (4/28, 9pm-12am):</label>
           <div className="form-field">
             <Field name="isComingFri" id="isComingFri" component="input" type="checkbox"/>
           </div>
