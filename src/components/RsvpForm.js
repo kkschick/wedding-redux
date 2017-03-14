@@ -71,26 +71,6 @@ class RsvpForm extends React.Component {
         </div>
         <hr />
         <div>
-          <div className="paragraph-text">Which of these other events will you be able to attend?</div>
-          <label htmlFor="isComingFri">Friday Welcome Party (4/28, 9pm-12am):</label>
-          <div className="form-field">
-            <Field name="isComingFri" id="isComingFri" component="input" type="checkbox"/>
-          </div>
-        </div>
-        <div>
-          <label htmlFor="isComingPicnic">Saturday Picnic (4/29, 10am-1pm):</label>
-          <div className="form-field">
-            <Field name="isComingPicnic" id="isComingPicnic" component="input" type="checkbox"/>
-          </div>
-        </div>
-        <div>
-          <label htmlFor="isComingBrunch">Sunday Bluegrass Brunch (4/30, 9:30am-12:30pm):</label>
-          <div className="form-field">
-            <Field name="isComingBrunch" id="isComingBrunch" component="input" type="checkbox"/>
-          </div>
-        </div>
-        <hr />
-        <div>
           <label>Anything else you want to tell us?</label><br/>
           <div className="form-field">
             <Field name="comments" component="textarea" type="text" className="textarea-field" />
