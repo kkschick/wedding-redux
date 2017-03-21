@@ -6,6 +6,7 @@ import auth from './auth';
 import Accommodations from './components/Accommodations';
 import Admin from './components/Admin';
 import App from './components/App';
+import Boston from './components/Boston';
 import Details from './components/Details';
 import Directions from './components/Directions';
 import Index from './components/Index';
@@ -30,7 +31,8 @@ const routes = (
       <Route path="/login" component={Login}/>
       <Route path="/details" component={Details} onEnter={requireAuth}/>
       <Route path="/directions" component={Directions} onEnter={requireAuth}/>
-      <Route path="/accommodations" component={Accommodations} onEnter={requireAuth}/>
+      <Route path="/hotels" component={Accommodations} onEnter={requireAuth}/>
+      <Route path="/boston" component={Boston} onEnter={requireAuth}/>
       <Route path="/photos" component={Photos} onEnter={requireAuth}/>
       <Route path="/registry" component={Registry} onEnter={requireAuth}/>
       <Route path="/rsvp" component={RsvpContainer} onEnter={requireAuth}/>
