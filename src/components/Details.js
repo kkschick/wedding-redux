@@ -14,8 +14,8 @@ export default class Details extends React.Component {
                 Friday, April 28th<br/>
               </span>
               <span className="paragraph-text">
-                <strong>Welcome Party @ Storyville<br/>
-                90 Exeter Street<br/>
+                <strong>Welcome Party @ Storyville Mini-Bar<br/>
+                51 Huntington Avenue<br/>
                 9pm-midnight<br/><br/></strong>
                 <em>Come hear the Klyce Family Band play and join us for some informal drinks, dancing, and conversation!</em><br/><br/>
               </span>
