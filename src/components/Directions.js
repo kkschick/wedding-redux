@@ -16,10 +16,10 @@ export default class Directions extends React.Component {
                   <a href="https://www.google.com/maps/place/199+Clarendon+St,+Boston,+MA+02116/@42.3501805,-71.07692,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a0ca1394d57:0x4129d7b0c5202d2a!8m2!3d42.3501805!4d-71.0747313" target="_blank">
                     199 Clarendon Street
                   </a>)
-                and is $7 for the night with validation.<br/><br/>
+                and is $8 for the night with a voucher from the library.<br/><br/>
                 <span className="small-text">
-                  Email us at katieandwalterparty(at)gmail(dot)com
-                  if you'll be parking a car so we can get you a voucher!
+                  Vouchers will be available at the coat check and bars,
+                  or you can ask any library staff for one!
                 </span>
               </div>
             </div>
@@ -52,7 +52,7 @@ export default class Directions extends React.Component {
                 If you're coming via Amtrak or the MBTA Commuter Rail,
                 the closest station is Back Bay (5 min walk).<br/><br/>
                 If you're coming via the T, the closest stations are
-                Back Bay (Orange Line) and Copley (Green Line).  
+                Back Bay (Orange Line) and Copley (Green Line).
               </div>
             </div>
           </div>

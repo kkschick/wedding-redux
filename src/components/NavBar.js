@@ -19,8 +19,7 @@ export default class NavBar extends React.Component {
       { name: 'Hotels', route: '/hotels', classNames: 'no-link-formatting'},
       { name: 'Explore Boston', route: '/boston', classNames: 'no-link-formatting'},
       { name: 'Photos', route: '/photos', classNames: 'no-link-formatting'},
-      { name: 'Registry', route: '/registry', classNames: 'no-link-formatting'},
-      { name: 'RSVP', route: '/rsvp', classNames: 'no-link-formatting'}
+      { name: 'Registry', route: '/registry', classNames: 'no-link-formatting'}
     ];
 
     navItems = this.getActiveItem(navItems);
