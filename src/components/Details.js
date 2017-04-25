@@ -50,7 +50,7 @@ export default class Details extends React.Component {
 
                 Ceremony at 7pm.<br/>
                 Cocktails & reception to follow.<br/><br/>
-                <em>Formal attire requested, but black tie is not necessary. Wear what you feel comfortable in!
+                <em>Formal attire requested. (That's fancy-speak for "suits, not tuxes".) Wear what you feel comfortable in!<br/><br/>
                 The ceremony and cocktail hour will be outdoors (weather permitting), so you may want to bring a light layer.<br/><br/></em>
               </span>
               <img src="https://res.cloudinary.com/hnswgapni/image/upload/c_scale,w_300/v1477838773/bpl-exterior_zqwplq.jpg" className="basic-img"/><br/><br/><br/>
